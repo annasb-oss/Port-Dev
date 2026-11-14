@@ -9,6 +9,25 @@ import AuroraBackground from './components/AuroraBackground';
 import PacmanDivider from './components/pacman/PacmanDivider';
 import HeroStarfield from './components/HeroStarfield';
 
+class BandErrorBoundary extends React.Component<
+  React.PropsWithChildren,
+  { hasError: boolean }
+> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div className="responsive-wrapper" aria-hidden="true" />;
+    }
+    return this.props.children;
+  }
+}
+
+
 export default function App() {
   return (
     <div className="relative w-full min-h-screen text-white overflow-x-hidden">
@@ -38,7 +57,7 @@ export default function App() {
         <HeroStarfield />
 
         {/* 3D Card Interactive Experience (Rapier Physics + Three.js Lanyard with transparent canvas) */}
-        <BandApp />
+        <BandErrorBoundary><BandApp /></BandErrorBoundary>
 
         {/* Portfolio Presentation Text */}
         <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-start md:justify-center items-center md:items-start px-5 pt-22 sm:px-10 sm:pt-28 md:px-12 lg:px-16 xl:px-20 md:py-16">
