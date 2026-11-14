@@ -249,7 +249,7 @@ export default function ExperiencesSection() {
 
             {/* Mobile/Tablet character tucked cleanly inside top-right corner without clipping */}
             <div className="lg:hidden absolute right-1 top-1 sm:right-2 sm:top-2 z-20 pointer-events-auto">
-              <PixelRedGhost className="w-28 h-28 sm:w-36 sm:h-36" />
+              <PixelRedGhost className="w-36 h-36 sm:w-44 sm:h-44" />
             </div>
 
             {/* LEFT + CENTER: Pinned header + internal vertically scrollable horizontal rectangle cards */}
