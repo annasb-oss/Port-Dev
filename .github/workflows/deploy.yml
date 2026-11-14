@@ -50,7 +50,15 @@ jobs:
           restore_file "public/assets/card_texture_custom.png" "public/assets/card_texture_custom.png"
           # The original ZIP uses root-absolute asset paths. GitHub Pages serves this project below /Port-Dev/.
           # Prefix only these resource URLs with Vite's configured base path; visuals and component behavior stay unchanged.
-          sed -i "s#'/assets/kartu.glb'#`\${import.meta.env.BASE_URL}assets/kartu.glb`#; s#'/assets/bandd.png'#`\${import.meta.env.BASE_URL}assets/bandd.png`#; s#'/assets/card_texture_custom.png?v=5'#`\${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`#" src/components/band/App.tsx
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path("src/components/band/App.tsx")
+          source = path.read_text()
+          source = source.replace("const GLTF_PATH = '/assets/kartu.glb';", "const GLTF_PATH = `${import.meta.env.BASE_URL}assets/kartu.glb`;")
+          source = source.replace("const TEXTURE_PATH = '/assets/bandd.png';", "const TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/bandd.png`;")
+          source = source.replace("const CARD_TEXTURE_PATH = '/assets/card_texture_custom.png?v=5';", "const CARD_TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`;")
+          path.write_text(source)
+          PY
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
