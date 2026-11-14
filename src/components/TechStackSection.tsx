@@ -62,6 +62,27 @@ export default function TechStackSection() {
                     )}
                   </div>
 
+                  {project.extraImageUrl && (
+                    <img
+                      src={project.extraImageUrl}
+                      alt={project.extraImageAlt ?? project.title}
+                      loading="lazy"
+                      className="w-full aspect-[4/3] object-contain rounded-2xl border border-zinc-800/90 mb-4 bg-[#080c14]"
+                    />
+                  )}
+
+                  {project.videoUrl && (
+                    <video
+                      src={project.videoUrl}
+                      controls
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={`Demonstração em vídeo de ${project.title}`}
+                      className="w-full rounded-2xl border border-zinc-800/90 mb-4 bg-[#080c14]"
+                    />
+                  )}
+
                   {/* Project Title & Description */}
                   <h3
                     className={`text-xl font-bold mb-1.5 ${
@@ -92,12 +113,7 @@ export default function TechStackSection() {
                       <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white shrink-0 transition-colors" />
                     </a>
                   </div>
-                ) : (
-                  <div className="mt-5 pt-4 border-t border-zinc-800/50 flex items-center justify-between text-xs text-zinc-600">
-                    <span>Aguardando publicação</span>
-                    <span className="font-mono text-[10px]">EM BREVE</span>
-                  </div>
-                )}
+                ) : null}
               </article>
             ))}
           </div>
