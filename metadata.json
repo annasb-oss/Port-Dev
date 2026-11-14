@@ -1,0 +1,6 @@
+{
+  "name": "FTRZ - 3D Card",
+  "description": "latihan 3D card - Interactive 3D Card with physics and lanyard simulation",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
