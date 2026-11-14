@@ -46,6 +46,11 @@ jobs:
           restore_file "src/assets/images/teal_blue_nebula_1794604639109.jpg" "src/assets/images/teal_blue_nebula_1794604639109.jpg"
           restore_file "src/types.d.ts" "src/types.d.ts"
           restore_file "public/assets/kartu.glb" "public/assets/kartu.glb"
+          restore_file "public/assets/bandd.png" "public/assets/bandd.png"
+          restore_file "public/assets/card_texture_custom.png" "public/assets/card_texture_custom.png"
+          # The original ZIP uses root-absolute asset paths. GitHub Pages serves this project below /Port-Dev/.
+          # Prefix only these resource URLs with Vite's configured base path; visuals and component behavior stay unchanged.
+          sed -i "s#'/assets/kartu.glb'#`\${import.meta.env.BASE_URL}assets/kartu.glb`#; s#'/assets/bandd.png'#`\${import.meta.env.BASE_URL}assets/bandd.png`#; s#'/assets/card_texture_custom.png?v=5'#`\${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`#" src/components/band/App.tsx
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
