@@ -59,6 +59,8 @@ jobs:
           source = source.replace("const CARD_TEXTURE_PATH = '/assets/card_texture_custom.png?v=5';", "const CARD_TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`;")
           # Slightly reduce the 3D card model so it remains inside its visible frame.
           source = source.replace("scale={2.85}", "scale={2.35}");
+          # Narrow only the oversized black ribbon; preserve the lanyard cord, clip and card.
+          source = source.replace("lineWidth={1}", "lineWidth={0.14}");
           path.write_text(source)
 
           # Restore the original portrait reveal, but resolve its assets under /Port-Dev/.
