@@ -78,6 +78,10 @@ jobs:
           source = source.replace("scale={2.85}", "scale={2.35}");
           path.write_text(source)
 
+          # Diagnostic: inspect badge lanyard geometry and attachment points.
+          source = Path("src/components/band/App.tsx").read_text().splitlines()
+          print("LANYARD_GEOMETRY_LINES_127_270:\\n" + "\\n".join(f"{n+1}: {source[n]}" for n in range(126, min(270, len(source)))))
+
           # Restore the original portrait reveal, but resolve its assets under /Port-Dev/.
           portrait = Path("src/components/AboutPortraitMorph.tsx")
           source = portrait.read_text()
