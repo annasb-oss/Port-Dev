@@ -33,7 +33,7 @@ html, body {
   align-items: center;
   transform: scale(1);
   transform-origin: center;
-  touch-action: none;
+  touch-action: pan-y;
 }
 
 /* ==========================================================
