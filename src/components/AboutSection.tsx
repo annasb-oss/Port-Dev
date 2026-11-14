@@ -4,7 +4,7 @@ import { Download } from 'lucide-react';
 import AboutPortraitMorph from './AboutPortraitMorph';
 import AboutNebulaReveal from './AboutNebulaReveal';
 
-const RESUME_PDF_URL = '/assets/aistudio/ana_Carolina_tech_473a5434.pdf';
+const RESUME_PDF_URL = `${import.meta.env.BASE_URL}assets/aistudio/ana_Carolina_tech_473a5434.pdf`;
 
 export default function AboutSection() {
   return (
