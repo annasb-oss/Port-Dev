@@ -48,6 +48,7 @@ jobs:
           restore_file "public/assets/kartu.glb" "public/assets/kartu.glb"
           restore_file "public/assets/bandd.png" "public/assets/bandd.png"
           restore_file "public/assets/card_texture_custom.png" "public/assets/card_texture_custom.png"
+          # Keep the original badge cord geometry and material from the supplied ZIP.
           # The original ZIP uses root-absolute asset paths. GitHub Pages serves this project below /Port-Dev/.
           # Prefix only these resource URLs with Vite's configured base path; visuals and component behavior stay unchanged.
           python3 - <<'PY'
