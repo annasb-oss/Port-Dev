@@ -58,6 +58,11 @@ jobs:
           source = source.replace("const GLTF_PATH = '/assets/kartu.glb';", "const GLTF_PATH = `${import.meta.env.BASE_URL}assets/kartu.glb`;")
           source = source.replace("const TEXTURE_PATH = '/assets/bandd.png';", "const TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/bandd.png`;")
           source = source.replace("const CARD_TEXTURE_PATH = '/assets/card_texture_custom.png?v=5';", "const CARD_TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`;")
+          # Lower the lanyard's card-side joint so the cord physically meets the badge ring.
+          source = source.replace(
+              "useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.84, 0]]);",
+              "useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.25, 0]]);"
+          )
           # Force every MeshLine cord material to pure black, regardless of whitespace or original color.
           import re
           source, cord_materials = re.subn(
@@ -77,10 +82,6 @@ jobs:
           # Slightly reduce the 3D card model so it remains inside its visible frame.
           source = source.replace("scale={2.85}", "scale={2.35}");
           path.write_text(source)
-
-          # Diagnostic: inspect badge lanyard geometry and attachment points.
-          source = Path("src/components/band/App.tsx").read_text().splitlines()
-          print("LANYARD_GEOMETRY_LINES_127_270:\\n" + "\\n".join(f"{n+1}: {source[n]}" for n in range(126, min(270, len(source)))))
 
           # Restore the original portrait reveal, but resolve its assets under /Port-Dev/.
           portrait = Path("src/components/AboutPortraitMorph.tsx")
