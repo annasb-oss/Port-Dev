@@ -57,7 +57,21 @@ jobs:
           source = source.replace("const GLTF_PATH = '/assets/kartu.glb';", "const GLTF_PATH = `${import.meta.env.BASE_URL}assets/kartu.glb`;")
           source = source.replace("const TEXTURE_PATH = '/assets/bandd.png';", "const TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/bandd.png`;")
           source = source.replace("const CARD_TEXTURE_PATH = '/assets/card_texture_custom.png?v=5';", "const CARD_TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`;")
+          # Slightly reduce the 3D card model so it remains inside its visible frame.
+          source = source.replace("scale={2.85}", "scale={2.35}");
           path.write_text(source)
+
+          # Restore the original portrait reveal, but resolve its assets under /Port-Dev/.
+          portrait = Path("src/components/AboutPortraitMorph.tsx")
+          source = portrait.read_text()
+          source = source.replace("const ANA_CUTOUT_SRC = '/assets/ana-cutout.png';", "const ANA_CUTOUT_SRC = `${import.meta.env.BASE_URL}assets/ana-cutout.png`;")
+          source = source.replace("const CATWOMAN_CUTOUT_SRC = '/assets/ana-catwoman.png';", "const CATWOMAN_CUTOUT_SRC = `${import.meta.env.BASE_URL}assets/ana-catwoman.png`;")
+          portrait.write_text(source)
+
+          # Keep vertical scrolling enabled in the restored 3D component.
+          band_css = Path("src/components/band/index.css")
+          source = band_css.read_text().replace("touch-action: none;", "touch-action: pan-y;")
+          band_css.write_text(source)
           PY
 
       - name: Setup Bun
