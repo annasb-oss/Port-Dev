@@ -221,6 +221,9 @@ export interface VideoProjectItem {
   description: string;
   gifUrl?: string;
   gifAlt?: string;
+  videoUrl?: string;
+  extraImageUrl?: string;
+  extraImageAlt?: string;
   repoUrl?: string;
   repoLabel?: string;
   isPlaceholder?: boolean;
@@ -233,6 +236,7 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     description:
       'Recriação animada da busca visual sobre código Java e operações bitwise com destaques e grifos em âmbar guiados pela aranha.',
     gifUrl: `${import.meta.env.BASE_URL}assets/nebula-search.gif`,
+    videoUrl: `${import.meta.env.BASE_URL}assets/aistudio/WhatsApp_Video_2026-11-13_at_20.44.40_098782fc.mp4`,
     gifAlt: 'Demonstração animada em GIF do projeto Nebula Search exibindo código Java e aranha preta peluda olhando para cima enquanto percorre os dois lados grifando trechos importantes',
     repoUrl: 'https://github.com/annasb-oss/Nebula-search',
     repoLabel: 'github.com/annasb-oss/Nebula-search',
@@ -243,15 +247,18 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     description:
       'Jogo de adivinhação feito no Scratch como primeiro projeto prático de programação. O computador escolhe um número secreto entre 1 e 10, e o jogador tenta descobri-lo fazendo palpites. A cada erro, o jogo indica se o palpite foi baixo demais ou alto demais.',
     gifUrl: `${import.meta.env.BASE_URL}assets/adivinhe-o-numero.png`,
+    extraImageUrl: `${import.meta.env.BASE_URL}assets/aistudio/assim_72422438.PNG`,
+    extraImageAlt: 'Tela do Scratch mostrando os blocos de programação do jogo Adivinhe o Número',
     gifAlt: 'Tela do jogo Adivinhe o Número feito no Scratch exibindo o botão de iniciar',
     repoUrl: 'https://github.com/annasb-oss/adivinhe-o-numero',
     repoLabel: 'github.com/annasb-oss/adivinhe-o-numero',
   },
   {
-    id: 'projeto-video-slot-3',
-    title: 'Próximo Projeto',
-    description: 'Espaço reservado para nova demonstração em vídeo/GIF sem som de projeto publicado no GitHub.',
-    isPlaceholder: true,
+    id: 'intellicalc',
+    title: 'IntelliCalc',
+    description: 'Calculadora inteligente com interface visual para realizar cálculos do dia a dia.',
+    gifUrl: `${import.meta.env.BASE_URL}assets/aistudio/calcule_aqui_6a5d314e.PNG`,
+    gifAlt: 'Captura de tela da interface da calculadora IntelliCalc',
   },
 ];
 
