@@ -52,11 +52,8 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           source = Path("src/components/band/App.tsx").read_text().splitlines()
-          terms = ("color", "lanyard", "cord", "strap", "material", "mesh", "lineWidth", "black", "blue")
-          for i, line in enumerate(source):
-              if any(term in line.lower() for term in terms):
-                  start, end = max(0, i-2), min(len(source), i+3)
-                  print(f"BADGE_SOURCE_LINES_{start+1}_{end}:\\n" + "\\n".join(f"{n+1}: {source[n]}" for n in range(start, end)))
+          for start, end in ((90, 135), (270, 330)):
+              print(f"BADGE_SOURCE_LINES_{start+1}_{end}:\\n" + "\\n".join(f"{n+1}: {source[n]}" for n in range(start, min(end, len(source)))))
           PY
           # Keep the original badge cord geometry and material from the supplied ZIP.
           # The original ZIP uses root-absolute asset paths. GitHub Pages serves this project below /Port-Dev/.
