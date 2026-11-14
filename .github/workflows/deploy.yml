@@ -21,6 +21,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Restore original Google AI Studio components
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="public/assets/aistudio/ftrz---3d-card__7__46d05314.zip"
+          test -f "$archive"
+          restore_file() {
+            local source="$1"
+            local destination="$2"
+            mkdir -p "$(dirname "$destination")"
+            unzip -p "$archive" "$source" > "$destination"
+            test -s "$destination"
+          }
+          restore_file "src/components/AuroraBackground.tsx" "src/components/AuroraBackground.tsx"
+          restore_file "src/components/HeroStarfield.tsx" "src/components/HeroStarfield.tsx"
+          restore_file "src/components/band/App.tsx" "src/components/band/App.tsx"
+          restore_file "src/components/band/index.css" "src/components/band/index.css"
+          restore_file "src/components/pacman/PacmanDivider.tsx" "src/components/pacman/PacmanDivider.tsx"
+          restore_file "src/components/pacman/pacman-game.ts" "src/components/pacman/pacman-game.ts"
+          restore_file "src/types.d.ts" "src/types.d.ts"
+          restore_file "public/assets/kartu.glb" "public/assets/kartu.glb"
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
