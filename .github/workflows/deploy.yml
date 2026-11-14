@@ -40,6 +40,10 @@ jobs:
           restore_file "src/components/band/index.css" "src/components/band/index.css"
           restore_file "src/components/pacman/PacmanDivider.tsx" "src/components/pacman/PacmanDivider.tsx"
           restore_file "src/components/pacman/pacman-game.ts" "src/components/pacman/pacman-game.ts"
+          restore_file "src/components/AboutPortraitMorph.tsx" "src/components/AboutPortraitMorph.tsx"
+          restore_file "src/components/AboutNebulaReveal.tsx" "src/components/AboutNebulaReveal.tsx"
+          restore_file "src/components/about-morph.ts" "src/components/about-morph.ts"
+          restore_file "src/assets/images/teal_blue_nebula_1794604639109.jpg" "src/assets/images/teal_blue_nebula_1794604639109.jpg"
           restore_file "src/types.d.ts" "src/types.d.ts"
           restore_file "public/assets/kartu.glb" "public/assets/kartu.glb"
 
