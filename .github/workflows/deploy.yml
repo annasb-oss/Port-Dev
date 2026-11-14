@@ -48,13 +48,6 @@ jobs:
           restore_file "public/assets/kartu.glb" "public/assets/kartu.glb"
           restore_file "public/assets/bandd.png" "public/assets/bandd.png"
           restore_file "public/assets/card_texture_custom.png" "public/assets/card_texture_custom.png"
-          # Temporary diagnostic: inspect original badge model material and cord setup.
-          python3 - <<'PY'
-          from pathlib import Path
-          source = Path("src/components/band/App.tsx").read_text().splitlines()
-          for start, end in ((90, 135), (270, 330)):
-              print(f"BADGE_SOURCE_LINES_{start+1}_{end}:\\n" + "\\n".join(f"{n+1}: {source[n]}" for n in range(start, min(end, len(source)))))
-          PY
           # Keep the original badge cord geometry and material from the supplied ZIP.
           # The original ZIP uses root-absolute asset paths. GitHub Pages serves this project below /Port-Dev/.
           # Prefix only these resource URLs with Vite's configured base path; visuals and component behavior stay unchanged.
@@ -65,6 +58,8 @@ jobs:
           source = source.replace("const GLTF_PATH = '/assets/kartu.glb';", "const GLTF_PATH = `${import.meta.env.BASE_URL}assets/kartu.glb`;")
           source = source.replace("const TEXTURE_PATH = '/assets/bandd.png';", "const TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/bandd.png`;")
           source = source.replace("const CARD_TEXTURE_PATH = '/assets/card_texture_custom.png?v=5';", "const CARD_TEXTURE_PATH = `${import.meta.env.BASE_URL}assets/card_texture_custom.png?v=5`;")
+          # The supplied lanyard texture has a blue cast; tint only the cord uniformly black.
+          source = source.replace('<meshLineMaterial\\n          color="white"', '<meshLineMaterial\\n          color="#000000"')
           # Slightly reduce the 3D card model so it remains inside its visible frame.
           source = source.replace("scale={2.85}", "scale={2.35}");
           path.write_text(source)
