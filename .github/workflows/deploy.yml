@@ -61,14 +61,14 @@ jobs:
           # Force every MeshLine cord material to pure black, regardless of whitespace or original color.
           import re
           source, cord_materials = re.subn(
-              r'(<meshLineMaterial\\b[^>]*?\\bcolor\\s*=\\s*)["\\'][^"\\']*["\\']',
-              r'\\1"#000000"',
+              r"(<meshLineMaterial\b[^>]*?\bcolor\s*=\s*)['\"][^'\"]*['\"]",
+              r'\1"#000000"',
               source,
               flags=re.DOTALL,
           )
           if cord_materials == 0:
               source, cord_materials = re.subn(
-                  r'<meshLineMaterial\\b',
+                  r'<meshLineMaterial\b',
                   '<meshLineMaterial color="#000000"',
                   source,
               )
