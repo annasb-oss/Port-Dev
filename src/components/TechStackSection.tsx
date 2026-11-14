@@ -62,27 +62,6 @@ export default function TechStackSection() {
                     )}
                   </div>
 
-                  {project.extraImageUrl && (
-                    <img
-                      src={project.extraImageUrl}
-                      alt={project.extraImageAlt ?? project.title}
-                      loading="lazy"
-                      className="w-full aspect-[4/3] object-contain rounded-2xl border border-zinc-800/90 mb-4 bg-[#080c14]"
-                    />
-                  )}
-
-                  {project.videoUrl && (
-                    <video
-                      src={project.videoUrl}
-                      controls
-                      muted
-                      playsInline
-                      preload="metadata"
-                      aria-label={`Demonstração em vídeo de ${project.title}`}
-                      className="w-full rounded-2xl border border-zinc-800/90 mb-4 bg-[#080c14]"
-                    />
-                  )}
-
                   {/* Project Title & Description */}
                   <h3
                     className={`text-xl font-bold mb-1.5 ${
