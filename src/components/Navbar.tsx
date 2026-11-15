@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
 
 type NavSectionId = 'hero' | 'sobre-mim' | 'experiencias' | 'meus-projetos';
 
@@ -100,13 +99,7 @@ export default function Navbar() {
                   : 'text-white/90 hover:text-white hover:bg-white/10'
               }`}
             >
-              {isActive && (
-                <motion.span
-                  layoutId="active-nav-pill"
-                  transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                  className="absolute inset-0 rounded-full bg-transparent border border-blue-300/70 shadow-[0_0_16px_rgba(59,130,246,0.48)]"
-                />
-              )}
+              
               <span className="relative z-10">{item.label}</span>
             </a>
           );
