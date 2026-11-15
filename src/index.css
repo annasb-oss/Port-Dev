@@ -287,3 +287,30 @@ html, body {
   background-clip: content-box;
 }
 
+
+
+/* Custom glowing blue cursor — visible only on the portfolio */
+.portfolio-cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #55baff;
+  box-shadow:
+    0 0 6px 2px rgba(85, 186, 255, 0.95),
+    0 0 14px 5px rgba(45, 145, 255, 0.68),
+    0 0 28px 9px rgba(35, 110, 255, 0.32);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform, opacity;
+  transition: opacity 160ms ease;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .portfolio-cursor-glow {
+    display: none;
+  }
+}
