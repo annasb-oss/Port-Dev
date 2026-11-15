@@ -249,32 +249,6 @@ export default function ExperiencesSection() {
         </svg>
       </div>
 
-      {/* Subtle deep navy gradient illumination keeping outer portfolio dark-blue */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 75% 45% at 50% 0%, rgba(0, 171, 240, 0.08) 0%, rgba(4, 12, 24, 0) 70%), radial-gradient(circle at 12% 80%, rgba(14, 165, 233, 0.06) 0%, rgba(4, 12, 24, 0) 55%)',
-        }}
-      />
-
-      {/* Discrete Topographic Contour Texture */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 1440 1100"
-        preserveAspectRatio="xMidYMid slice"
-        className="pointer-events-none absolute inset-0 w-full h-full opacity-[0.085]"
-      >
-        <g fill="none" stroke="#38bdf8" strokeWidth="1">
-          <path d="M-80 140 C 180 60, 420 240, 720 150 C 1020 60, 1240 210, 1520 120" />
-          <path d="M-80 185 C 190 105, 430 280, 730 190 C 1030 100, 1250 250, 1520 165" strokeOpacity="0.8" />
-          <path d="M-80 235 C 210 155, 445 320, 745 235 C 1045 150, 1265 290, 1520 215" strokeOpacity="0.6" />
-          <path d="M-60 880 C 220 790, 490 950, 790 865 C 1090 780, 1290 930, 1520 845" />
-          <path d="M-60 935 C 235 845, 505 1000, 805 920 C 1105 840, 1300 980, 1520 900" strokeOpacity="0.7" />
-        </g>
-      </svg>
-
       {/* Main Mint-Green Rounded Board */}
       <div className="relative z-10 max-w-[1320px] mx-auto">
         <div
