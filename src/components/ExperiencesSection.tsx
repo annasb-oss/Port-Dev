@@ -114,10 +114,10 @@ function EducationTimelineList({
 
               {/* Wide Horizontal Lying Rectangle Card ("retângulo deitado em uma única fila") */}
               <article
-                className={`relative rounded-xl border-[1.5px] transition-all duration-150 ${
+                className={`glow-border-card relative isolate rounded-xl border-[1.5px] transition-all duration-300 ${
                   isActive
                     ? 'border-cyan-200/60 bg-slate-950/55 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
-                    : 'border-white/15 bg-white/[0.07] hover:border-cyan-200/40 hover:bg-white/[0.11]'
+                    : 'border-white/25 bg-white/[0.07] hover:border-white/70 hover:bg-white/[0.11]'
                 }`}
               >
                 <button
