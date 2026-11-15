@@ -5,7 +5,6 @@ import AboutSection from './components/AboutSection';
 import ExperiencesSection from './components/ExperiencesSection';
 import TechStackSection from './components/TechStackSection';
 import Footer from './components/Footer';
-import AuroraBackground from './components/AuroraBackground';
 import PacmanDivider from './components/pacman/PacmanDivider';
 import HeroStarfield from './components/HeroStarfield';
 import CursorGlow from './components/CursorGlow';
@@ -33,9 +32,6 @@ export default function App() {
   return (
     <div className="relative w-full min-h-screen text-white overflow-x-hidden">
       <CursorGlow />
-      {/* Dark night sky with moving Aurora Borealis and twinkling stars */}
-      <AuroraBackground />
-
       {/* Sticky Navigation Bar */}
       <Navbar />
 
