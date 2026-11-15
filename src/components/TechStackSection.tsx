@@ -58,17 +58,29 @@ export default function TechStackSection() {
           )}
 
           {activeTab === 'certificates' && (
-            <div className="glow-border-card relative isolate mx-auto max-w-3xl rounded-2xl border border-white/25 bg-[#10141d]/70 p-6 text-center shadow-[0_0_10px_rgba(255,255,255,0.08)]">
-              <GraduationCap className="mx-auto mb-3 h-8 w-8 text-cyan-200" aria-hidden="true" />
-              <h3 className="text-base font-bold text-white">Certificados disponíveis nas experiências</h3>
-              <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-zinc-300">
-                Para visualizar os documentos, acesse a seção <strong className="text-cyan-200">Experiências</strong> e clique em
-                <strong className="text-cyan-200"> Ver certificados</strong> nos cartões da DIO ou da Fundação Bradesco.
-              </p>
-              <a href="#experiencias" className="mt-4 inline-flex items-center gap-2 rounded-full border border-cyan-200/50 bg-transparent px-4 py-2 text-xs font-bold text-cyan-100 transition hover:border-cyan-100 hover:text-white">
-                Ir para experiências
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5" aria-label="Certificados concluídos">
+              {[
+                { title: 'Crie um site simples usando HTML, CSS e JavaScript', institution: 'Fundação Bradesco · 2 horas', file: 'certificado-fundacao-bradesco-html-css-javascript.pdf' },
+                { title: 'Matemática Financeira com o uso da HP 12C', institution: 'Fundação Bradesco · 20 horas', file: 'certificado-fundacao-bradesco-matematica-financeira-hp12c.pdf' },
+                { title: 'Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes', institution: 'DIO · 2 horas', file: 'certificado-dio-fundamentos-ia-moderna.pdf' },
+                { title: 'Introdução à Engenharia de Prompts', institution: 'DIO · 1 hora', file: 'certificado-dio-introducao-engenharia-de-prompts.pdf' },
+              ].map((certificate) => (
+                <article key={certificate.file} className="glow-border-card relative isolate rounded-2xl border border-white/25 bg-[#10141d]/90 p-5 shadow-[0_0_10px_rgba(255,255,255,0.08)]">
+                  <div className="relative z-[2]">
+                    <h3 className="text-sm font-bold leading-relaxed text-white">{certificate.title}</h3>
+                    <p className="mt-2 text-xs text-cyan-200">{certificate.institution}</p>
+                    <a
+                      href={`${import.meta.env.BASE_URL}certificados/${certificate.file}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-cyan-200/50 bg-transparent px-3 py-2 text-xs font-bold text-cyan-100 transition hover:border-cyan-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
+                    >
+                      Abrir certificado PDF
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
+                  </div>
+                </article>
+              ))}
             </div>
           )}
 
