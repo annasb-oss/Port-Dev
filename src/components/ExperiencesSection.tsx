@@ -21,10 +21,10 @@ const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
   'unimar-extra': `${import.meta.env.BASE_URL}assets/logos/unimar.png`,
   dio: `${import.meta.env.BASE_URL}assets/logos/dio.svg`,
   freecodecamp: `${import.meta.env.BASE_URL}assets/logos/freecodecamp.png`,
-  bradesco: `${import.meta.env.BASE_URL}assets/logos/bradesco.png?v=20261115`,
+  bradesco: 'https://raw.githubusercontent.com/annasb-oss/Port-Dev/main/public/assets/logos/bradesco.png',
   harvard: `${import.meta.env.BASE_URL}assets/logos/edx.png`,
   duolingo: `${import.meta.env.BASE_URL}assets/logos/duolingo.png`,
-  udemy: `${import.meta.env.BASE_URL}assets/logos/udemy.png?v=20261115`,
+  udemy: 'https://raw.githubusercontent.com/annasb-oss/Port-Dev/main/public/assets/logos/udemy.png',
 };
 
 function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
