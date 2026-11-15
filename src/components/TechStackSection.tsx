@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Code2, ExternalLink, Film, FolderKanban, GraduationCap, Trophy } from 'lucide-react';
+import { Code2, ExternalLink, Film, FolderKanban, Trophy } from 'lucide-react';
 import { EXPERIENCE_TIMELINE, TECH_STACK, VIDEO_PROJECTS } from '../utils/portfolio-data';
 
-type PortfolioTab = 'projects' | 'certificates' | 'tech' | 'achievements';
+type PortfolioTab = 'projects' | 'tech' | 'achievements';
 const TABS: { id: PortfolioTab; label: string; icon: React.ElementType }[] = [
   { id: 'projects', label: 'Projetos', icon: FolderKanban },
-  { id: 'certificates', label: 'Certificados', icon: GraduationCap },
   { id: 'tech', label: 'Tech Stack', icon: Code2 },
   { id: 'achievements', label: 'Conquistas', icon: Trophy },
 ];
@@ -52,33 +51,6 @@ export default function TechStackSection() {
                     <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{project.description}</p>
                   </div>
                   {project.repoUrl && <div className="relative z-[2] mt-5 pt-4 border-t border-zinc-800/60"><a href={project.repoUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visualizar ${project.title} no GitHub`} data-testid={`project-link-${project.id}`} className="inline-flex items-center justify-between gap-2 w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/80 hover:border-zinc-500 text-xs font-semibold text-white transition"><span className="truncate">{project.repoLabel ?? project.repoUrl}</span><ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white shrink-0 transition-colors" /></a></div>}
-                </article>
-              ))}
-            </div>
-          )}
-
-          {activeTab === 'certificates' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5" aria-label="Certificados concluídos">
-              {[
-                { title: 'Crie um site simples usando HTML, CSS e JavaScript', institution: 'Fundação Bradesco · 2 horas', file: 'certificado-fundacao-bradesco-html-css-javascript.pdf' },
-                { title: 'Matemática Financeira com o uso da HP 12C', institution: 'Fundação Bradesco · 20 horas', file: 'certificado-fundacao-bradesco-matematica-financeira-hp12c.pdf' },
-                { title: 'Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes', institution: 'DIO · 2 horas', file: 'certificado-dio-fundamentos-ia-moderna.pdf' },
-                { title: 'Introdução à Engenharia de Prompts', institution: 'DIO · 1 hora', file: 'certificado-dio-introducao-engenharia-de-prompts.pdf' },
-              ].map((certificate) => (
-                <article key={certificate.file} className="glow-border-card relative isolate rounded-2xl border border-white/25 bg-[#10141d]/90 p-5 shadow-[0_0_10px_rgba(255,255,255,0.08)]">
-                  <div className="relative z-[2]">
-                    <h3 className="text-sm font-bold leading-relaxed text-white">{certificate.title}</h3>
-                    <p className="mt-2 text-xs text-cyan-200">{certificate.institution}</p>
-                    <a
-                      href={`${import.meta.env.BASE_URL}certificados/${certificate.file}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-cyan-200/50 bg-transparent px-3 py-2 text-xs font-bold text-cyan-100 transition hover:border-cyan-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
-                    >
-                      Abrir certificado PDF
-                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                    </a>
-                  </div>
                 </article>
               ))}
             </div>
