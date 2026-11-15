@@ -356,3 +356,27 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   .glow-border-card::after { animation: none; background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.65), rgba(255,255,255,0.12)); }
 }
+
+
+/* Stronger travelling white highlight for the experience timeline cards */
+.experience-glow-card::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  z-index: 5;
+  border-radius: inherit;
+  padding: 2px;
+  pointer-events: none;
+  background: conic-gradient(from var(--portfolio-glow-angle), transparent 0deg, transparent 225deg, rgba(255,255,255,0.18) 265deg, rgba(255,255,255,1) 305deg, rgba(255,255,255,0.5) 328deg, transparent 350deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: portfolio-border-orbit 4s linear infinite;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.85));
+}
+.experience-glow-card:hover::after,
+.experience-glow-card:focus-within::after { animation-duration: 2.2s; }
+@media (prefers-reduced-motion: reduce) {
+  .experience-glow-card::after { animation: none; background: linear-gradient(90deg, rgba(255,255,255,0.3), #fff, rgba(255,255,255,0.3)); }
+}
