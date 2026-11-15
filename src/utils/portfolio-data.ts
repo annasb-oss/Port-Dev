@@ -247,13 +247,6 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     repoUrl: 'https://github.com/annasb-oss/adivinhe-o-numero',
     repoLabel: 'github.com/annasb-oss/adivinhe-o-numero',
   },
-  {
-    id: 'intellicalc',
-    title: 'IntelliCalc',
-    description: 'Calculadora inteligente com interface visual para realizar cálculos do dia a dia.',
-    gifUrl: `${import.meta.env.BASE_URL}assets/aistudio/calcule_aqui_6a5d314e.PNG`,
-    gifAlt: 'Captura de tela da interface da calculadora IntelliCalc',
-  },
 ];
 
 export type TimelineIconType =
