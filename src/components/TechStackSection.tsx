@@ -2,6 +2,16 @@ import React from 'react';
 import { TECH_STACK, VIDEO_PROJECTS } from '../utils/portfolio-data';
 import { ExternalLink, Film } from 'lucide-react';
 
+const TECH_ICON_SLUGS: Record<string, string> = {
+  java: 'java',
+  spring: 'spring',
+  postgres: 'postgresql',
+  mysql: 'mysql',
+  docker: 'docker',
+  junit: 'junit5',
+  github: 'github',
+};
+
 export default function TechStackSection() {
   return (
     <section
@@ -28,8 +38,9 @@ export default function TechStackSection() {
                 data-testid={`project-card-${project.id}`}
                 className={`group relative p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between ${
                   project.isPlaceholder
-                    ? 'bg-[#0f0f12] border border-dashed border-zinc-800/90'
-                    : 'bg-[#141414]/90 border border-white/35 shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)] hover:border-white/80 hover:shadow-[0_0_10px_rgba(255,255,255,0.55),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)]'
+                    ? 'bg-[#0f0f12]/90 border border-white/20 shadow-[0_0_8px_rgba(255,255,255,0.06)]'
+                    : 'bg-[#141414]/90 border border-white/35 shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)]'
+                } hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)] focus-within:border-white/85 focus-within:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20)] active:shadow-[0_0_12px_rgba(255,255,255,0.45)]'
                 }`}
               >
                 <div>
@@ -114,8 +125,17 @@ export default function TechStackSection() {
               <article
                 key={tech.id}
                 data-testid={`tech-card-${tech.id}`}
-                className="group relative min-h-[116px] rounded-2xl border border-white/35 bg-[#10141d]/90 px-4 py-5 flex flex-col items-center justify-center text-center shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)] transition-all duration-300 hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.65),0_0_30px_rgba(255,255,255,0.22),inset_0_0_18px_rgba(255,255,255,0.07)]"
+                className="group relative min-h-[142px] rounded-2xl border border-white/35 bg-[#10141d]/90 px-4 py-5 flex flex-col items-center justify-center text-center shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)] transition-all duration-300 hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.65),0_0_30px_rgba(255,255,255,0.22),inset_0_0_18px_rgba(255,255,255,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 active:shadow-[0_0_12px_rgba(255,255,255,0.5)]"
               >
+                <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/[0.04] p-2.5 shadow-[0_0_12px_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/[0.08] group-hover:shadow-[0_0_16px_rgba(255,255,255,0.20)]">
+                  <img
+                    src={`https://cdn.simpleicons.org/${TECH_ICON_SLUGS[tech.iconName]}/FFFFFF`}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </span>
                 <span className="text-base sm:text-lg font-extrabold text-white group-hover:text-white transition-colors">
                   {tech.name}
                 </span>
