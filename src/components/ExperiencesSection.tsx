@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {
   GraduationCap,
+  ExternalLink,
   Terminal,
   Code2,
   Globe,
@@ -68,6 +69,7 @@ function EducationTimelineList({
   activeId,
   onSelect,
 }: EducationListProps) {
+  const [expandedCertificateId, setExpandedCertificateId] = useState<string | null>(null);
   return (
     <div className="flex flex-col">
       <div className="mb-4 pl-11">
@@ -167,19 +169,32 @@ function EducationTimelineList({
                   </p>
                 </button>
                 {entry.certificateUrls && entry.certificateUrls.length > 0 && (
-                  <div className="relative z-[3] flex flex-wrap gap-2 px-4 pb-3.5 pl-[68px]">
-                    {entry.certificateUrls.map((certificate) => (
-                      <a
-                        key={certificate.url}
-                        href={`${import.meta.env.BASE_URL}certificados/${certificate.url}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative z-[10] pointer-events-auto inline-flex items-center gap-1.5 rounded-lg border border-cyan-200/50 bg-transparent px-3 py-1.5 text-[11px] font-bold text-cyan-100 transition hover:border-cyan-100 hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
-                      >
-                        <Award className="h-3.5 w-3.5" aria-hidden="true" />
-                        Ver certificado · {certificate.label}
-                      </a>
-                    ))}
+                  <div className="relative z-[4] px-4 pb-3.5 pl-[68px]">
+                    <button
+                      type="button"
+                      aria-expanded={expandedCertificateId === entry.id}
+                      onClick={() => setExpandedCertificateId((current) => current === entry.id ? null : entry.id)}
+                      className="relative z-[10] pointer-events-auto inline-flex items-center gap-1.5 rounded-lg border border-cyan-200/50 bg-transparent px-3 py-1.5 text-[11px] font-bold text-cyan-100 transition hover:border-cyan-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
+                    >
+                      <Award className="h-3.5 w-3.5" aria-hidden="true" />
+                      {expandedCertificateId === entry.id ? 'Ocultar certificados' : 'Ver certificados'}
+                    </button>
+                    {expandedCertificateId === entry.id && (
+                      <div className="mt-3 flex flex-wrap gap-2" aria-label={`Certificados de ${entry.institution}`}>
+                        {entry.certificateUrls.map((certificate) => (
+                          <a
+                            key={certificate.url}
+                            href={`${import.meta.env.BASE_URL}certificados/${certificate.url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/[0.04] px-3 py-2 text-[11px] font-semibold text-slate-100 transition hover:border-cyan-200/70 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
+                          >
+                            {certificate.label}
+                            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-cyan-200" aria-hidden="true" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </article>
