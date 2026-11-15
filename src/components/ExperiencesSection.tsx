@@ -174,7 +174,7 @@ function EducationTimelineList({
                         href={`${import.meta.env.BASE_URL}certificados/${certificate.url}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-cyan-200/35 bg-cyan-300/10 px-3 py-1.5 text-[11px] font-bold text-cyan-100 transition hover:border-cyan-100 hover:bg-cyan-300/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
+                        className="relative z-[10] pointer-events-auto inline-flex items-center gap-1.5 rounded-lg border border-cyan-200/50 bg-transparent px-3 py-1.5 text-[11px] font-bold text-cyan-100 transition hover:border-cyan-100 hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
                       >
                         <Award className="h-3.5 w-3.5" aria-hidden="true" />
                         Ver certificado · {certificate.label}
