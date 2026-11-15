@@ -11,10 +11,13 @@ export default function CursorGlow() {
     const pointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
     if (!pointerQuery.matches) return;
 
+    // Replace the native arrow: the glowing dot becomes the actual cursor.
+    document.documentElement.classList.add('portfolio-custom-cursor');
+
     const handlePointerMove = (event: PointerEvent) => {
       if (event.pointerType === 'touch') return;
 
-      dot.style.transform = `translate3d(${event.clientX - 5}px, ${event.clientY - 5}px, 0)`;
+      dot.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
       dot.style.opacity = '1';
     };
 
@@ -34,6 +37,7 @@ export default function CursorGlow() {
       window.removeEventListener('pointermove', handlePointerMove);
       document.documentElement.removeEventListener('pointerleave', handlePointerLeave);
       document.documentElement.removeEventListener('pointerenter', handlePointerEnter);
+      document.documentElement.classList.remove('portfolio-custom-cursor');
     };
   }, []);
 
