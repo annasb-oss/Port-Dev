@@ -18,6 +18,7 @@ const TECH_ICONS: Record<string, { slug: string; color: string }> = {
 
 export default function TechStackSection() {
   const [activeTab, setActiveTab] = useState<PortfolioTab>('projects');
+  const [showCertificates, setShowCertificates] = useState(false);
   return (
     <section id="meus-projetos" data-testid="meus-projetos-section" className="relative z-10 w-full bg-black px-4 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 text-white scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -58,12 +59,31 @@ export default function TechStackSection() {
           )}
 
           {activeTab === 'certificates' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {EDUCATION_TIMELINE.map((entry) => (
-                <article key={entry.id} className="glow-border-card relative isolate rounded-2xl border border-white/25 bg-[#10141d]/90 p-5 shadow-[0_0_10px_rgba(255,255,255,0.08)]">
-                  <div className="relative z-[2] flex items-start gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/[0.06]"><Award className="h-5 w-5 text-cyan-200" aria-hidden="true" /></span><div className="min-w-0"><h3 className="font-bold text-white">{entry.institution}</h3><p className="mt-1 text-sm font-semibold text-zinc-200">{entry.courseOrRole}</p>{entry.description && <p className="mt-2 text-xs leading-relaxed text-zinc-400">{entry.description}</p>}{(entry.period || entry.tags?.length) && <p className="mt-3 text-xs font-semibold text-cyan-200">{[entry.period, ...(entry.tags ?? [])].filter(Boolean).join(' · ')}</p>}</div></div>
-                </article>
-              ))}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {EDUCATION_TIMELINE.map((entry) => {
+                  const ongoing = entry.id === 'unimar-graduacao' || entry.id === 'harvard-edx-cs50';
+                  return (
+                    <article key={entry.id} className="glow-border-card relative isolate rounded-2xl border border-white/25 bg-[#10141d]/90 p-5 shadow-[0_0_10px_rgba(255,255,255,0.08)]">
+                      <div className="relative z-[2] flex items-start gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/[0.06]"><Award className="h-5 w-5 text-cyan-200" aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-bold text-white">{entry.institution}</h3><p className="mt-1 text-sm font-semibold text-zinc-200">{entry.courseOrRole}</p>{entry.description && <p className="mt-2 text-xs leading-relaxed text-zinc-400">{entry.description}</p>}<div className="mt-3 flex flex-wrap items-center gap-2"><span className={`rounded-full border px-3 py-1 text-[11px] font-bold ${ongoing ? 'border-amber-300/30 bg-amber-300/10 text-amber-200' : 'border-emerald-300/30 bg-emerald-300/10 text-emerald-200'}`}>{ongoing ? 'Em andamento' : 'Concluído'}</span>{entry.period && <span className="text-xs text-cyan-200">{entry.period}</span>}{!ongoing && (entry.id === 'fundacao-bradesco' || entry.id === 'dio-cursos') && <button type="button" onClick={() => setShowCertificates(true)} className="rounded-full border border-blue-300/40 bg-blue-500/15 px-3 py-1 text-[11px] font-bold text-blue-200 transition hover:bg-blue-500/30 hover:text-white">Ver certificados</button>}</div></div></div>
+                    </article>
+                  );
+                })}
+              </div>
+              {showCertificates && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5" aria-label="Certificados concluídos">
+                  {[
+                    { title: 'Crie um site simples usando HTML, CSS e JavaScript', institution: 'Fundação Bradesco · 2 horas', image: '/assets/certificados/fundacao-bradesco-html-css-js.jpg' },
+                    { title: 'Matemática Financeira com o uso da HP 12C', institution: 'Fundação Bradesco · 20 horas', image: '/assets/certificados/fundacao-bradesco-matematica-financeira.jpg' },
+                    { title: 'Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes', institution: 'DIO · 2 horas', image: '/assets/certificados/dio-fundamentos-ia-moderna.jpg' },
+                    { title: 'Introdução à Engenharia de Prompts', institution: 'DIO · 1 hora', image: '/assets/certificados/dio-engenharia-de-prompts.jpg' },
+                  ].map((certificate) => (
+                    <article key={certificate.title} className="glow-border-card relative isolate overflow-hidden rounded-2xl border border-white/25 bg-[#10141d]/90 p-4">
+                      <div className="relative z-[2]"><h3 className="text-sm font-bold text-white">{certificate.title}</h3><p className="mb-3 mt-1 text-xs text-cyan-200">{certificate.institution}</p><a href={certificate.image} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-white/20 transition hover:border-blue-300/70"><img src={certificate.image} alt={`Certificado: ${certificate.title}`} loading="lazy" className="h-auto w-full object-contain" /></a><a href={certificate.image} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-200 hover:text-white">Abrir certificado <ExternalLink className="h-3.5 w-3.5" /></a></div>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
