@@ -81,7 +81,7 @@ export default function Navbar() {
         aria-label="Navegação principal"
         className={`pointer-events-auto flex items-center gap-0.5 sm:gap-1.5 rounded-full p-1 sm:p-1.5 border transition-all duration-300 max-w-full overflow-hidden bg-transparent backdrop-blur-md ${
           scrolled
-            ? 'border-white/30 shadow-[0_8px_28px_rgba(0,0,0,0.32),0_0_18px_rgba(59,130,246,0.10)]'
+            ? 'border-white/30 shadow-[0_8px_28px_rgba(0,0,0,0.32)]'
             : 'border-white/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)]'
         }`}
       >
