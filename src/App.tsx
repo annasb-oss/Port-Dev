@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import AuroraBackground from './components/AuroraBackground';
 import PacmanDivider from './components/pacman/PacmanDivider';
 import HeroStarfield from './components/HeroStarfield';
+import CursorGlow from './components/CursorGlow';
 
 class BandErrorBoundary extends React.Component<
   React.PropsWithChildren,
@@ -31,6 +32,7 @@ class BandErrorBoundary extends React.Component<
 export default function App() {
   return (
     <div className="relative w-full min-h-screen text-white overflow-x-hidden">
+      <CursorGlow />
       {/* Dark night sky with moving Aurora Borealis and twinkling stars */}
       <AuroraBackground />
 
