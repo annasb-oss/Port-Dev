@@ -36,6 +36,59 @@ html, body {
   touch-action: pan-y;
 }
 
+/* Starfield animations: keep shooting stars and twinkles without restoring the blue aurora background. */
+@keyframes aurora-twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+@keyframes aurora-twinkle-bright {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+.animate-aurora-twinkle {
+  animation: aurora-twinkle infinite ease-in-out;
+}
+
+.animate-aurora-twinkle-bright {
+  animation: aurora-twinkle-bright infinite ease-in-out;
+}
+
+@keyframes hero-shooting-star {
+  0% {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0) scaleX(0.35);
+  }
+  6% {
+    opacity: 1;
+    transform: translate3d(80px, 0, 0) scaleX(1);
+  }
+  24% {
+    opacity: 0.9;
+    transform: translate3d(620px, 0, 0) scaleX(1);
+  }
+  32%, 100% {
+    opacity: 0;
+    transform: translate3d(860px, 0, 0) scaleX(0.45);
+  }
+}
+
+.hero-shooting-star {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: hero-shooting-star linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-shooting-star,
+  .animate-aurora-twinkle,
+  .animate-aurora-twinkle-bright {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 /* White light travelling around portfolio cards */
 @property --portfolio-glow-angle {
   syntax: '<angle>';
