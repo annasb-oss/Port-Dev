@@ -65,7 +65,7 @@ function EducationTimelineList({
         {/* Continuous vertical timeline rail */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-[15px] top-4 bottom-4 w-[2px] rounded-full bg-[#081529]/15"
+          className="pointer-events-none absolute left-[15px] top-4 bottom-4 w-[2px] rounded-full bg-white/15"
         />
 
         {entries.map((entry) => {
@@ -87,8 +87,8 @@ function EducationTimelineList({
                 data-active={isActive ? 'true' : 'false'}
                 className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-extrabold tabular-nums border-2 transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5] ${
                   isActive
-                    ? 'bg-[#081529] text-[#9FFDD1] border-[#081529] shadow-[0_3px_0_rgba(79,70,229,0.55)] scale-105'
-                    : 'bg-[#EBFFF5] text-[#081529] border-[#081529]/40 group-hover:border-[#4F46E5] group-hover:text-[#4F46E5]'
+                    ? 'bg-cyan-300/15 text-cyan-100 border-cyan-200/50 shadow-[0_3px_0_rgba(79,70,229,0.55)] scale-105'
+                    : 'bg-[#EBFFF5] text-[#081529] border-[#081529]/40 group-hover:border-cyan-200 group-hover:text-cyan-100'
                 }`}
               >
                 {entry.numberLabel}
@@ -113,7 +113,7 @@ function EducationTimelineList({
                       <span className="w-7 h-7 rounded-lg border bg-[#DCEEFF] border-[#2563EB]/25 flex items-center justify-center shrink-0">
                         <TimelineEntryIcon type={entry.icon} />
                       </span>
-                      <h4 className="text-[15px] font-extrabold text-[#061121] leading-snug sm:truncate">
+                      <h4 className="text-[15px] font-extrabold text-white leading-snug sm:truncate">
                         {entry.institution}
                       </h4>
                     </div>
@@ -126,7 +126,7 @@ function EducationTimelineList({
                           </span>
                         )}
                         {entry.tags?.length && entry.period ? (
-                          <span aria-hidden="true" className="hidden sm:inline text-[#081529]/30 text-xs">
+                          <span aria-hidden="true" className="hidden sm:inline text-white/30 text-xs">
                             ·
                           </span>
                         ) : null}
@@ -259,11 +259,11 @@ export default function ExperiencesSection() {
                 <div className="min-w-0 pr-28 sm:pr-36 lg:pr-0">
                   <h2
                     id="experiencias-heading"
-                    className="text-2xl sm:text-3xl lg:text-[2.15rem] font-extrabold tracking-tight leading-[1.08] text-[#061121] font-sans text-balance"
+                    className="text-2xl sm:text-3xl lg:text-[2.15rem] font-extrabold tracking-tight leading-[1.08] text-white font-sans text-balance"
                   >
                     Minhas Experiências
                   </h2>
-                  <p className="mt-1.5 text-xs sm:text-sm font-medium text-[#112A46]/90 max-w-xl leading-relaxed">
+                  <p className="mt-1.5 text-xs sm:text-sm font-medium text-slate-300 max-w-xl leading-relaxed">
                     Formação acadêmica, cursos complementares, certificações e estudos em tecnologia.
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export default function ExperiencesSection() {
                 data-testid="experiences-scroll-area"
                 tabIndex={0}
                 aria-label="Lista rolável de formação acadêmica e cursos"
-                className="mint-board-scroll flex-1 min-h-0 h-[420px] sm:h-[460px] lg:h-auto overflow-y-auto overscroll-contain touch-pan-y mt-4 pr-2 sm:pr-3 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#081529]/50 rounded-xl"
+                className="mint-board-scroll flex-1 min-h-0 h-[420px] sm:h-[460px] lg:h-auto overflow-y-auto overscroll-contain touch-pan-y mt-4 pr-2 sm:pr-3 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/50 rounded-xl"
               >
                 <div className="pb-3">
                   <EducationTimelineList
