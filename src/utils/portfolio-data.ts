@@ -264,6 +264,7 @@ export type TimelineIconType =
   | 'harvard'
   | 'unimar-extra'
   | 'duolingo'
+  | 'udemy'
   | 'github'
   | 'backend'
   | 'placeholder';
@@ -347,6 +348,14 @@ export const EDUCATION_TIMELINE: TimelineEntry[] = [
     period: 'Em desenvolvimento',
     tags: ['Nível: Iniciante'],
     icon: 'duolingo',
+  },
+  {
+    id: 'udemy-cursos',
+    numberLabel: '08',
+    institution: 'Udemy',
+    courseOrRole: 'Cursos complementares em tecnologia.',
+    description: 'Plataforma de aprendizagem complementar para ampliar conhecimentos e desenvolver novas habilidades na área de programação.',
+    icon: 'udemy',
   },
 ];
 
