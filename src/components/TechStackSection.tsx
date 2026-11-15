@@ -1,5 +1,5 @@
 import React from 'react';
-import { VIDEO_PROJECTS } from '../utils/portfolio-data';
+import { TECH_STACK, VIDEO_PROJECTS } from '../utils/portfolio-data';
 import { ExternalLink, Film } from 'lucide-react';
 
 export default function TechStackSection() {
@@ -29,7 +29,7 @@ export default function TechStackSection() {
                 className={`group relative p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between ${
                   project.isPlaceholder
                     ? 'bg-[#0f0f12] border border-dashed border-zinc-800/90'
-                    : 'bg-[#141414] border border-zinc-800/90 hover:border-zinc-600 shadow-lg'
+                    : 'bg-[#141414]/90 border border-white/35 shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)] hover:border-white/80 hover:shadow-[0_0_10px_rgba(255,255,255,0.55),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)]'
                 }`}
               >
                 <div>
@@ -38,7 +38,7 @@ export default function TechStackSection() {
                     className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 ${
                       project.isPlaceholder
                         ? 'bg-zinc-950/90 border border-zinc-800/70 flex flex-col items-center justify-center text-center px-4'
-                        : 'bg-[#080c14] border border-zinc-800/90'
+                        : 'bg-[#080c14] border border-white/25 shadow-[0_0_12px_rgba(255,255,255,0.08)] group-hover:border-white/55 group-hover:shadow-[0_0_18px_rgba(255,255,255,0.20)]'
                     }`}
                   >
                     {project.gifUrl ? (
@@ -97,6 +97,37 @@ export default function TechStackSection() {
             ))}
           </div>
         </div>
+
+        {/* Tech Stack — white glow technology cards */}
+        <div id="tech-stack" className="mt-20 scroll-mt-24">
+          <div className="flex flex-col items-center text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white uppercase font-sans">
+              Tech <span className="text-[#3b82f6]">Stack</span>
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-zinc-400 max-w-2xl">
+              Tecnologias e ferramentas que utilizo nos meus estudos e projetos.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+            {TECH_STACK.map((tech) => (
+              <article
+                key={tech.id}
+                data-testid={`tech-card-${tech.id}`}
+                className="group relative min-h-[116px] rounded-2xl border border-white/35 bg-[#10141d]/90 px-4 py-5 flex flex-col items-center justify-center text-center shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)] transition-all duration-300 hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.65),0_0_30px_rgba(255,255,255,0.22),inset_0_0_18px_rgba(255,255,255,0.07)]"
+              >
+                <span className="text-base sm:text-lg font-extrabold text-white group-hover:text-white transition-colors">
+                  {tech.name}
+                </span>
+                <span className="mt-1.5 text-[10px] sm:text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                  {tech.category}
+                </span>
+                <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),transparent_72%)]" />
+              </article>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
