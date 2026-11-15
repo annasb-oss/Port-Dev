@@ -104,7 +104,7 @@ export default function Navbar() {
                 <motion.span
                   layoutId="active-nav-pill"
                   transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                  className="absolute inset-0 rounded-full bg-blue-600/85 border border-blue-300/70 shadow-[0_0_16px_rgba(59,130,246,0.48),inset_0_0_10px_rgba(255,255,255,0.14)]"
+                  className="absolute inset-0 rounded-full bg-transparent border border-blue-300/70 shadow-[0_0_16px_rgba(59,130,246,0.48)]"
                 />
               )}
               <span className="relative z-10">{item.label}</span>
