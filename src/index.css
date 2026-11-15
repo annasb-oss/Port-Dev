@@ -326,3 +326,33 @@ html, body {
     cursor: none !important;
   }
 }
+
+
+/* White light travelling around portfolio cards */
+@property --portfolio-glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.glow-border-card { isolation: isolate; }
+.glow-border-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  background: conic-gradient(from var(--portfolio-glow-angle), transparent 0deg, transparent 245deg, rgba(255,255,255,0.08) 278deg, rgba(255,255,255,0.95) 315deg, rgba(255,255,255,0.22) 338deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: portfolio-border-orbit 5s linear infinite;
+  opacity: 0.82;
+  transition: opacity 250ms ease;
+}
+.glow-border-card:hover::after, .glow-border-card:focus-within::after { opacity: 1; animation-duration: 2.8s; }
+@keyframes portfolio-border-orbit { to { --portfolio-glow-angle: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .glow-border-card::after { animation: none; background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.65), rgba(255,255,255,0.12)); }
+}
