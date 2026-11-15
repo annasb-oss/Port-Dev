@@ -21,6 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Extract portfolio certificates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/certificados
+          unzip -o certificados-para-github.zip -d public/certificados
+          test "$(find public/certificados -maxdepth 1 -name '*.pdf' | wc -l)" -eq 4
+
       - name: Restore original Google AI Studio components
         shell: bash
         run: |
