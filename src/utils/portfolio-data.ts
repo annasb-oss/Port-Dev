@@ -274,6 +274,7 @@ export interface TimelineEntry {
   techIcons?: ('java' | 'spring' | 'postgres' | 'mysql' | 'docker' | 'junit' | 'github')[];
   linkUrl?: string;
   linkLabel?: string;
+  certificateUrls?: { label: string; url: string }[];
   isPlaceholder?: boolean;
 }
 
@@ -296,6 +297,10 @@ export const EDUCATION_TIMELINE: TimelineEntry[] = [
     description: 'Trilhas de aprendizagem com conteúdos práticos de programação e desenvolvimento, complementadas por certificados dos estudos realizados.',
     tags: ['Concluído'],
     icon: 'dio',
+    certificateUrls: [
+      { label: 'Fundamentos da IA Moderna', url: 'certificado-dio-fundamentos-ia-moderna.pdf' },
+      { label: 'Introdução à Engenharia de Prompts', url: 'certificado-dio-introducao-engenharia-de-prompts.pdf' },
+    ],
   },
   {
     id: 'freecodecamp-estudos',
@@ -310,9 +315,14 @@ export const EDUCATION_TIMELINE: TimelineEntry[] = [
     numberLabel: '04',
     institution: 'Fundação Bradesco',
     courseOrRole: 'Crie um site simples usando HTML, CSS e JavaScript.',
-    description: 'Carga horária: 2 horas.',
-    period: '2 horas',
+    description: 'Cursos concluídos na Fundação Bradesco.',
+    period: '2 cursos',
+    tags: ['Concluído'],
     icon: 'bradesco',
+    certificateUrls: [
+      { label: 'HTML, CSS e JavaScript', url: 'certificado-fundacao-bradesco-html-css-javascript.pdf' },
+      { label: 'Matemática Financeira HP 12C', url: 'certificado-fundacao-bradesco-matematica-financeira-hp12c.pdf' },
+    ],
   },
   {
     id: 'harvard-edx-cs50',
