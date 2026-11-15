@@ -314,3 +314,12 @@ html, body {
     display: none;
   }
 }
+
+
+/* Hide the native arrow only while using the custom cursor on this site. */
+@media (hover: hover) and (pointer: fine) {
+  html.portfolio-custom-cursor,
+  html.portfolio-custom-cursor * {
+    cursor: none !important;
+  }
+}
