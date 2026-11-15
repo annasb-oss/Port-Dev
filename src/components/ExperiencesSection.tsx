@@ -18,6 +18,7 @@ import { computeScrollProgress } from './experiences-board';
 
 const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
   university: `${import.meta.env.BASE_URL}assets/logos/unimar.png`,
+  'unimar-extra': `${import.meta.env.BASE_URL}assets/logos/unimar.png`,
   dio: `${import.meta.env.BASE_URL}assets/logos/dio.svg`,
   freecodecamp: `${import.meta.env.BASE_URL}assets/logos/freecodecamp.png`,
   bradesco: `${import.meta.env.BASE_URL}assets/logos/bradesco.png`,
