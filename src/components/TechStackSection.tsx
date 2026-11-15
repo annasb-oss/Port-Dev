@@ -31,7 +31,7 @@ export default function TechStackSection() {
             const selected = activeTab === tab.id;
             return (
               <button key={tab.id} type="button" role="tab" id={`portfolio-tab-${tab.id}`} aria-selected={selected} aria-controls={`portfolio-panel-${tab.id}`} onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${selected ? 'border-blue-300/80 bg-blue-600/85 text-white shadow-[0_0_16px_rgba(59,130,246,0.42),inset_0_0_10px_rgba(255,255,255,0.12)]' : 'border-transparent bg-transparent text-zinc-400 hover:border-white/25 hover:bg-white/[0.06] hover:text-white'}`}>
+                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${selected ? 'border-blue-300/80 bg-transparent text-white shadow-[0_0_16px_rgba(59,130,246,0.42)]' : 'border-transparent bg-transparent text-zinc-400 hover:border-white/25 hover:bg-white/[0.06] hover:text-white'}`}>
                 <Icon className="h-4 w-4" aria-hidden="true" />{tab.label}
               </button>
             );
