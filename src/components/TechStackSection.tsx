@@ -40,7 +40,7 @@ export default function TechStackSection() {
                   project.isPlaceholder
                     ? 'bg-[#0f0f12]/90 border border-white/20 shadow-[0_0_8px_rgba(255,255,255,0.06)]'
                     : 'bg-[#141414]/90 border border-white/35 shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)]'
-                } hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)] focus-within:border-white/85 focus-within:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20)] active:shadow-[0_0_12px_rgba(255,255,255,0.45)]'
+                } hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)] focus-within:border-white/85 focus-within:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20)] active:shadow-[0_0_12px_rgba(255,255,255,0.45)]
                 }`}
               >
                 <div>
