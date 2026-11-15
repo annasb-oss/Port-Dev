@@ -17,11 +17,11 @@ import {
 import { computeScrollProgress } from './experiences-board';
 
 const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
-  freecodecamp: 'https://cdn.simpleicons.org/freecodecamp',
-  bradesco: 'https://cdn.simpleicons.org/bradesco',
-  harvard: 'https://cdn.simpleicons.org/edx',
-  duolingo: 'https://cdn.simpleicons.org/duolingo',
-  udemy: 'https://cdn.simpleicons.org/udemy',
+  freecodecamp: `${import.meta.env.BASE_URL}assets/logos/freecodecamp.png`,
+  bradesco: `${import.meta.env.BASE_URL}assets/logos/bradesco.png`,
+  harvard: `${import.meta.env.BASE_URL}assets/logos/edx.png`,
+  duolingo: `${import.meta.env.BASE_URL}assets/logos/duolingo.png`,
+  udemy: `${import.meta.env.BASE_URL}assets/logos/udemy.png`,
 };
 
 function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
@@ -34,7 +34,7 @@ function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
         alt={`Logotipo ${label}`}
         loading="lazy"
         decoding="async"
-        className="w-7 h-7 rounded-full border border-white/25 bg-white object-contain p-1 shrink-0 shadow-[0_0_12px_rgba(56,189,248,0.12)]"
+        className="w-full h-full rounded-full object-cover shrink-0"
       />
     );
   }
