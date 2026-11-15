@@ -17,6 +17,8 @@ import {
 import { computeScrollProgress } from './experiences-board';
 
 const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
+  university: `${import.meta.env.BASE_URL}assets/logos/unimar.png`,
+  dio: `${import.meta.env.BASE_URL}assets/logos/dio.svg`,
   freecodecamp: `${import.meta.env.BASE_URL}assets/logos/freecodecamp.png`,
   bradesco: `${import.meta.env.BASE_URL}assets/logos/bradesco.png`,
   harvard: `${import.meta.env.BASE_URL}assets/logos/edx.png`,
@@ -27,14 +29,14 @@ const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
 function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
   const logo = INSTITUTION_LOGOS[type];
   if (logo) {
-    const label = type === 'harvard' ? 'edX' : type === 'bradesco' ? 'Fundação Bradesco' : type;
+    const label = type === 'harvard' ? 'edX' : type === 'bradesco' ? 'Fundação Bradesco' : type === 'university' ? 'UNIMAR' : type === 'dio' ? 'DIO' : type;
     return (
       <img
         src={logo}
         alt={`Logotipo ${label}`}
         loading="lazy"
         decoding="async"
-        className="w-full h-full rounded-full object-cover shrink-0"
+        className="w-full h-full rounded-full object-contain shrink-0 p-0.5"
       />
     );
   }
