@@ -318,8 +318,11 @@ html, body {
 
 /* Hide the native arrow only while using the custom cursor on this site. */
 @media (hover: hover) and (pointer: fine) {
-  html.portfolio-custom-cursor,
-  html.portfolio-custom-cursor * {
+  /* The site uses the neon dot as its only visible pointer. */
+  html,
+  html *,
+  body,
+  body * {
     cursor: none !important;
   }
 }
