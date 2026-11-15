@@ -82,8 +82,8 @@ export default function Navbar() {
         aria-label="Navegação principal"
         className={`pointer-events-auto flex items-center gap-0.5 sm:gap-1.5 rounded-full p-1 sm:p-1.5 border transition-all duration-300 max-w-full overflow-hidden bg-transparent backdrop-blur-md ${
           scrolled
-            ? 'border-white/25 shadow-[0_8px_28px_rgba(0,0,0,0.28)]'
-            : 'border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.14)]'
+            ? 'border-white/30 shadow-[0_8px_28px_rgba(0,0,0,0.32),0_0_18px_rgba(59,130,246,0.10)]'
+            : 'border-white/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)]'
         }`}
       >
         {NAV_ITEMS.map((item) => {
@@ -97,14 +97,14 @@ export default function Navbar() {
               className={`relative px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-sm font-semibold tracking-tight whitespace-nowrap transition-colors duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)] ${
                 isActive
                   ? 'text-white'
-                  : 'text-white/90 hover:text-white hover:bg-white/15'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
               }`}
             >
               {isActive && (
                 <motion.span
                   layoutId="active-nav-pill"
                   transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                  className="absolute inset-0 rounded-full bg-white/20 border border-white/40 shadow-[0_2px_10px_rgba(0,0,0,0.14)]"
+                  className="absolute inset-0 rounded-full bg-blue-600/85 border border-blue-300/70 shadow-[0_0_16px_rgba(59,130,246,0.48),inset_0_0_10px_rgba(255,255,255,0.14)]"
                 />
               )}
               <span className="relative z-10">{item.label}</span>
