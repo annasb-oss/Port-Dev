@@ -16,23 +16,39 @@ import {
 } from '../utils/portfolio-data';
 import { computeScrollProgress } from './experiences-board';
 
+const INSTITUTION_LOGOS: Partial<Record<TimelineIconType, string>> = {
+  freecodecamp: 'https://cdn.simpleicons.org/freecodecamp',
+  bradesco: 'https://cdn.simpleicons.org/bradesco',
+  harvard: 'https://cdn.simpleicons.org/edx',
+  duolingo: 'https://cdn.simpleicons.org/duolingo',
+  udemy: 'https://cdn.simpleicons.org/udemy',
+};
+
 function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
+  const logo = INSTITUTION_LOGOS[type];
+  if (logo) {
+    const label = type === 'harvard' ? 'edX' : type === 'bradesco' ? 'Fundação Bradesco' : type;
+    return (
+      <img
+        src={logo}
+        alt={`Logotipo ${label}`}
+        loading="lazy"
+        decoding="async"
+        className="w-7 h-7 rounded-full border border-white/25 bg-white object-contain p-1 shrink-0 shadow-[0_0_12px_rgba(56,189,248,0.12)]"
+      />
+    );
+  }
+
   const iconClass = 'w-4 h-4 text-cyan-200';
   switch (type) {
     case 'university':
       return <GraduationCap className={iconClass} aria-hidden="true" />;
     case 'dio':
       return <Terminal className={iconClass} aria-hidden="true" />;
-    case 'freecodecamp':
-      return <Code2 className={iconClass} aria-hidden="true" />;
-    case 'bradesco':
-      return <Globe className={iconClass} aria-hidden="true" />;
     case 'harvard':
       return <BookOpen className={iconClass} aria-hidden="true" />;
     case 'unimar-extra':
       return <Award className={iconClass} aria-hidden="true" />;
-    case 'duolingo':
-      return <Languages className={iconClass} aria-hidden="true" />;
     default:
       return <Code2 className={iconClass} aria-hidden="true" />;
   }
@@ -109,7 +125,7 @@ function EducationTimelineList({
                   {/* Top Row: Icon + Institution (left) | Tags + Period (right) — zero overlap */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-4">
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="w-7 h-7 rounded-lg border bg-cyan-300/10 border-cyan-200/25 flex items-center justify-center shrink-0">
+                      <span className="w-7 h-7 rounded-full border border-cyan-200/25 bg-cyan-300/[0.07] flex items-center justify-center shrink-0 overflow-hidden">
                         <TimelineEntryIcon type={entry.icon} />
                       </span>
                       <h4 className="text-[15px] font-extrabold text-white leading-snug sm:truncate">
