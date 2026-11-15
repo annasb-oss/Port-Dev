@@ -114,7 +114,7 @@ function EducationTimelineList({
 
               {/* Wide Horizontal Lying Rectangle Card ("retângulo deitado em uma única fila") */}
               <article
-                className={`glow-border-card relative isolate rounded-xl border-[1.5px] transition-all duration-300 ${
+                className={`glow-border-card experience-glow-card relative isolate overflow-visible rounded-xl border-[1.5px] transition-all duration-300 ${
                   isActive
                     ? 'border-cyan-200/60 bg-slate-950/55 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
                     : 'border-white/25 bg-white/[0.07] hover:border-white/70 hover:bg-white/[0.11]'
@@ -123,7 +123,7 @@ function EducationTimelineList({
                 <button
                   type="button"
                   onClick={() => onSelect(entry.id)}
-                  className="w-full text-left px-4 py-3.5 cursor-pointer rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5]"
+                  className="relative z-[2] w-full text-left px-4 py-3.5 cursor-pointer rounded-xl bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5]"
                 >
                   {/* Top Row: Icon + Institution (left) | Tags + Period (right) — zero overlap */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-4">
