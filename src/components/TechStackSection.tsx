@@ -25,13 +25,13 @@ export default function TechStackSection() {
           <p className="mt-2 text-sm sm:text-base text-zinc-400 max-w-2xl">Explore meus projetos, estudos, tecnologias e conquistas.</p>
         </div>
 
-        <div role="tablist" aria-label="Categorias do portfólio" className="mx-auto mb-8 flex w-fit max-w-full items-center justify-start sm:justify-center gap-1.5 overflow-x-auto overscroll-x-contain rounded-full border border-white/30 bg-[#0b1220]/90 p-1.5 shadow-[0_0_18px_rgba(59,130,246,0.12),0_8px_28px_rgba(0,0,0,0.30)] backdrop-blur-md">
+        <div role="tablist" aria-label="Categorias do portfólio" className="mx-auto mb-8 flex w-fit max-w-full items-center justify-start sm:justify-center gap-1.5 overflow-x-auto overscroll-x-contain rounded-full border border-white/30 bg-transparent p-1.5 shadow-[0_8px_28px_rgba(0,0,0,0.30)] backdrop-blur-md">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const selected = activeTab === tab.id;
             return (
               <button key={tab.id} type="button" role="tab" id={`portfolio-tab-${tab.id}`} aria-selected={selected} aria-controls={`portfolio-panel-${tab.id}`} onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${selected ? 'border-blue-300/80 bg-transparent text-white shadow-[0_0_16px_rgba(59,130,246,0.42)]' : 'border-transparent bg-transparent text-zinc-400 hover:border-white/25 hover:bg-white/[0.06] hover:text-white'}`}>
+                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${selected ? 'border-transparent bg-transparent text-white shadow-none' : 'border-transparent bg-transparent text-zinc-400 hover:border-transparent hover:bg-transparent hover:text-white'}`}>
                 <Icon className="h-4 w-4" aria-hidden="true" />{tab.label}
               </button>
             );
