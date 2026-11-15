@@ -124,17 +124,17 @@ function EducationTimelineList({
                 >
                   {/* Top Row: Icon + Institution (left) | Tags + Period (right) — zero overlap */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-4">
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="w-7 h-7 rounded-full border border-cyan-200/25 bg-cyan-300/[0.07] flex items-center justify-center shrink-0 overflow-hidden">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-cyan-200/35 bg-cyan-300/[0.09] flex items-center justify-center shrink-0 overflow-hidden shadow-[0_0_12px_rgba(34,211,238,0.10)]">
                         <TimelineEntryIcon type={entry.icon} />
                       </span>
-                      <h4 className="text-[15px] font-extrabold text-white leading-snug sm:truncate">
+                      <h4 className="text-[15px] sm:text-base font-extrabold text-white leading-snug sm:truncate">
                         {entry.institution}
                       </h4>
                     </div>
 
                     {(entry.tags?.length || entry.period) && (
-                      <div className="flex flex-wrap sm:flex-nowrap items-center gap-x-2 gap-y-1 shrink-0 pl-9 sm:pl-0">
+                      <div className="flex flex-wrap sm:flex-nowrap items-center gap-x-2 gap-y-1 shrink-0 pl-[52px] sm:pl-0">
                         {entry.tags && entry.tags.length > 0 && (
                           <span className="text-[11px] font-bold text-cyan-200 whitespace-nowrap">
                             {entry.tags.join(' · ')}
@@ -156,7 +156,7 @@ function EducationTimelineList({
                   </div>
 
                   {/* Bottom Row: Course & optional description cleanly aligned in horizontal rectangle */}
-                  <p className="mt-1.5 pl-9 text-xs sm:text-[13px] font-medium text-slate-200 leading-relaxed">
+                  <p className="mt-2 pl-[52px] text-xs sm:text-[13px] font-medium text-slate-200 leading-relaxed">
                     <span className="font-semibold text-white">{entry.courseOrRole}</span>
                     {entry.description ? (
                       <span className="text-slate-300"> — {entry.description}</span>
