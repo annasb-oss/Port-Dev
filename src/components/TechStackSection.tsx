@@ -2,14 +2,14 @@ import React from 'react';
 import { TECH_STACK, VIDEO_PROJECTS } from '../utils/portfolio-data';
 import { ExternalLink, Film } from 'lucide-react';
 
-const TECH_ICON_SLUGS: Record<string, string> = {
-  java: 'java',
-  spring: 'spring',
-  postgres: 'postgresql',
-  mysql: 'mysql',
-  docker: 'docker',
-  junit: 'junit5',
-  github: 'github',
+const TECH_ICONS: Record<string, { slug: string; color: string }> = {
+  java: { slug: 'java', color: 'F89820' },
+  spring: { slug: 'spring', color: '6DB33F' },
+  postgres: { slug: 'postgresql', color: '4169E1' },
+  mysql: { slug: 'mysql', color: '4479A1' },
+  docker: { slug: 'docker', color: '2496ED' },
+  junit: { slug: 'junit5', color: '25A162' },
+  github: { slug: 'github', color: 'FFFFFF' },
 };
 
 export default function TechStackSection() {
@@ -129,7 +129,7 @@ export default function TechStackSection() {
               >
                 <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/[0.04] p-2.5 shadow-[0_0_12px_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/[0.08] group-hover:shadow-[0_0_16px_rgba(255,255,255,0.20)]">
                   <img
-                    src={`https://cdn.simpleicons.org/${TECH_ICON_SLUGS[tech.iconName]}/FFFFFF`}
+                    src={`https://cdn.simpleicons.org/${TECH_ICONS[tech.iconName].slug}/${TECH_ICONS[tech.iconName].color}`}
                     alt=""
                     aria-hidden="true"
                     loading="lazy"
