@@ -14,11 +14,10 @@ import {
   TimelineEntry,
   TimelineIconType,
 } from '../utils/portfolio-data';
-import PixelRedGhost from './PixelRedGhost';
 import { computeScrollProgress } from './experiences-board';
 
 function TimelineEntryIcon({ type }: { type: TimelineIconType }) {
-  const iconClass = 'w-4 h-4 text-[#1D4ED8]';
+  const iconClass = 'w-4 h-4 text-cyan-200';
   switch (type) {
     case 'university':
       return <GraduationCap className={iconClass} aria-hidden="true" />;
@@ -56,7 +55,7 @@ function EducationTimelineList({
         <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-[#061121]">
           Formação e Estudos
         </h3>
-        <p className="text-xs font-medium text-[#163659]/85 mt-0.5">
+        <p className="text-xs font-medium text-slate-300 mt-0.5">
           Formação acadêmica · Cursos complementares · Certificações
         </p>
       </div>
@@ -88,7 +87,7 @@ function EducationTimelineList({
                 className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-extrabold tabular-nums border-2 transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5] ${
                   isActive
                     ? 'bg-cyan-300/15 text-cyan-100 border-cyan-200/50 shadow-[0_3px_0_rgba(79,70,229,0.55)] scale-105'
-                    : 'bg-[#EBFFF5] text-[#081529] border-[#081529]/40 group-hover:border-cyan-200 group-hover:text-cyan-100'
+                    : 'bg-slate-950/50 text-cyan-100 border-white/25 group-hover:border-cyan-200 group-hover:text-cyan-100'
                 }`}
               >
                 {entry.numberLabel}
@@ -98,8 +97,8 @@ function EducationTimelineList({
               <article
                 className={`relative rounded-xl border-[1.5px] transition-all duration-150 ${
                   isActive
-                    ? 'border-[#081529] bg-[#FFFFFF] shadow-[0_4px_0_rgba(8,21,41,0.2)]'
-                    : 'border-[#081529]/22 bg-[#F2FFF8]/92 hover:border-[#081529]/55 hover:bg-[#FAFFFC]'
+                    ? 'border-cyan-200/60 bg-slate-950/55 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
+                    : 'border-white/15 bg-white/[0.07] hover:border-cyan-200/40 hover:bg-white/[0.11]'
                 }`}
               >
                 <button
@@ -110,7 +109,7 @@ function EducationTimelineList({
                   {/* Top Row: Icon + Institution (left) | Tags + Period (right) — zero overlap */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-4">
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="w-7 h-7 rounded-lg border bg-[#DCEEFF] border-[#2563EB]/25 flex items-center justify-center shrink-0">
+                      <span className="w-7 h-7 rounded-lg border bg-cyan-300/10 border-cyan-200/25 flex items-center justify-center shrink-0">
                         <TimelineEntryIcon type={entry.icon} />
                       </span>
                       <h4 className="text-[15px] font-extrabold text-white leading-snug sm:truncate">
@@ -121,7 +120,7 @@ function EducationTimelineList({
                     {(entry.tags?.length || entry.period) && (
                       <div className="flex flex-wrap sm:flex-nowrap items-center gap-x-2 gap-y-1 shrink-0 pl-9 sm:pl-0">
                         {entry.tags && entry.tags.length > 0 && (
-                          <span className="text-[11px] font-bold text-[#4338CA] whitespace-nowrap">
+                          <span className="text-[11px] font-bold text-cyan-200 whitespace-nowrap">
                             {entry.tags.join(' · ')}
                           </span>
                         )}
@@ -131,7 +130,7 @@ function EducationTimelineList({
                           </span>
                         ) : null}
                         {entry.period && (
-                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#1D4ED8] tabular-nums whitespace-nowrap">
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-cyan-200 tabular-nums whitespace-nowrap">
                             <Calendar className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                             <span>{entry.period}</span>
                           </span>
@@ -141,10 +140,10 @@ function EducationTimelineList({
                   </div>
 
                   {/* Bottom Row: Course & optional description cleanly aligned in horizontal rectangle */}
-                  <p className="mt-1.5 pl-9 text-xs sm:text-[13px] font-medium text-[#112A46] leading-relaxed">
-                    <span className="font-semibold text-[#0A1F38]">{entry.courseOrRole}</span>
+                  <p className="mt-1.5 pl-9 text-xs sm:text-[13px] font-medium text-slate-200 leading-relaxed">
+                    <span className="font-semibold text-white">{entry.courseOrRole}</span>
                     {entry.description ? (
-                      <span className="text-[#243B53]"> — {entry.description}</span>
+                      <span className="text-slate-300"> — {entry.description}</span>
                     ) : null}
                   </p>
                 </button>
@@ -230,33 +229,19 @@ export default function ExperiencesSection() {
       <div className="relative z-10 max-w-[1320px] mx-auto">
         <div
           data-testid="experiences-mint-board"
-          className="relative rounded-[28px] sm:rounded-[34px] border-2 border-[#0B1E38] text-[#061121] shadow-[0_24px_65px_rgba(0,0,0,0.55)] overflow-visible"
+          className="relative rounded-[28px] sm:rounded-[34px] border border-cyan-100/20 text-white shadow-[0_24px_65px_rgba(0,0,0,0.55)] overflow-visible"
           style={{
-            background:
-              'linear-gradient(148deg, #A3FFE0 0%, #92F2C6 52%, #85EBBF 100%)',
+            background: 'rgba(7, 20, 39, 0.72)',
+            backdropFilter: 'blur(18px)',
+            WebkitBackdropFilter: 'blur(18px)',
           }}
         >
           <div className="relative flex flex-col lg:h-[630px] xl:h-[650px]">
-            {/* INTEGRATED CHARACTER: Pixel Red Pac-Man Ghost resting on the bottom line, enlarged up to the card edge */}
-            <div
-              aria-label="Personagem Pac-Man vermelho em pixel art"
-              className="hidden lg:flex items-end justify-end pointer-events-none absolute inset-y-0 right-0 w-[42%] z-20"
-            >
-              <div className="pointer-events-auto relative w-full max-w-[565px] -translate-x-5">
-                <PixelRedGhost className="w-full aspect-square" />
-              </div>
-            </div>
-
-            {/* Mobile/Tablet character tucked cleanly inside top-right corner without clipping */}
-            <div className="lg:hidden absolute right-1 top-1 sm:right-2 sm:top-2 z-20 pointer-events-auto">
-              <PixelRedGhost className="w-36 h-36 sm:w-44 sm:h-44" />
-            </div>
-
             {/* LEFT + CENTER: Pinned header + internal vertically scrollable horizontal rectangle cards */}
-            <div className="relative z-10 w-full lg:w-[58%] min-w-0 min-h-0 flex-1 flex flex-col p-5 sm:p-7 lg:p-8 lg:pr-4">
+            <div className="relative z-10 w-full min-w-0 min-h-0 flex-1 flex flex-col p-5 sm:p-7 lg:p-9">
               {/* Board Header */}
               <div className="relative flex items-start justify-between gap-3">
-                <div className="min-w-0 pr-28 sm:pr-36 lg:pr-0">
+                <div className="min-w-0 pr-0">
                   <h2
                     id="experiencias-heading"
                     className="text-2xl sm:text-3xl lg:text-[2.15rem] font-extrabold tracking-tight leading-[1.08] text-white font-sans text-balance"
@@ -273,7 +258,7 @@ export default function ExperiencesSection() {
               <div className="mt-3.5 max-w-md">
                 <div
                   aria-hidden="true"
-                  className="w-full h-1.5 rounded-full bg-[#081529]/15 overflow-hidden"
+                  className="w-full h-1.5 rounded-full bg-white/15 overflow-hidden"
                 >
                   <div
                     className="h-full rounded-full transition-transform duration-150 origin-left"
