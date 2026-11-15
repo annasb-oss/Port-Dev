@@ -2,7 +2,6 @@ import React from 'react';
 import { ABOUT_DATA } from '../utils/portfolio-data';
 import { Download } from 'lucide-react';
 import AboutPortraitMorph from './AboutPortraitMorph';
-import AboutNebulaReveal from './AboutNebulaReveal';
 
 const RESUME_PDF_URL = `${import.meta.env.BASE_URL}assets/aistudio/ana_Carolina_tech_473a5434.pdf`;
 
@@ -12,9 +11,6 @@ export default function AboutSection() {
       id="sobre-mim"
       className="relative z-10 w-full min-h-screen bg-[#000000] px-5 sm:px-10 md:px-14 lg:px-16 pt-24 pb-16 flex items-center text-white overflow-hidden scroll-mt-10"
     >
-      {/* Always-visible teal / blue-green cosmic nebula over #000000 black */}
-      <AboutNebulaReveal />
-
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           {/* ESQUERDA: Apresentação pessoal */}
