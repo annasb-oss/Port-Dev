@@ -46,13 +46,57 @@ export default function TechStackSection() {
                   <div className="relative z-[2]">
                     <div className={`relative w-full ${project.id === 'pacman' ? 'aspect-square' : 'aspect-[4/3]'} rounded-2xl overflow-hidden mb-4 ${project.isPlaceholder ? 'bg-zinc-950/90 border border-zinc-800/70 flex flex-col items-center justify-center text-center px-4' : 'bg-[#080c14] border border-white/25 shadow-[0_0_12px_rgba(255,255,255,0.08)] group-hover:border-white/55 group-hover:shadow-[0_0_18px_rgba(255,255,255,0.20)]'}`}>
                       {project.id === 'pacman' ? (
-                        <img
-                          src={`${import.meta.env.BASE_URL}assets/pacman-arcade-square.webp?v=2`}
-                          alt="Arte quadrada do jogo PAC-MAN Arcade com labirinto azul, pontos amarelos, fantasmas e frutas"
-                          loading="eager"
-                          decoding="async"
-                          className="absolute inset-0 block h-full w-full rounded-full object-cover"
-                        />
+                        <svg
+                          viewBox="0 0 400 400"
+                          role="img"
+                          aria-label="Ilustração quadrada do PAC-MAN com labirinto azul, pontos dourados, fantasmas e cerejas"
+                          className="absolute inset-0 block h-full w-full"
+                          preserveAspectRatio="xMidYMid slice"
+                        >
+                          <defs>
+                            <clipPath id="pacman-art-clip"><circle cx="200" cy="200" r="200" /></clipPath>
+                            <pattern id="pacman-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+                              <circle cx="14" cy="14" r="4.2" fill="#ffb52e" />
+                            </pattern>
+                          </defs>
+                          <g clipPath="url(#pacman-art-clip)">
+                            <rect width="400" height="400" fill="#030303" />
+                            <rect width="400" height="400" fill="url(#pacman-dots)" />
+                            <g fill="#030303" stroke="#073bff" strokeWidth="5" strokeLinejoin="round">
+                              <path d="M22 34h112v28H52v42H18V58h4zM266 34h112v28H296v42h-30zM18 148h82v28H48v50H18zM300 148h82v28h-52v50h-30zM20 270h100v26H48v42H20zM280 270h100v26h-70v42h-30zM145 18h28v90h-28zM228 18h28v90h-28zM145 292h28v90h-28zM228 292h28v90h-28z" />
+                              <path d="M90 128h220v16H90zM90 256h220v16H90z" />
+                            </g>
+                            <g fill="#ffdc24">
+                              <path d="M194 168a38 38 0 1 0 0 64l-31-32z" />
+                              <circle cx="190" cy="185" r="5" fill="#080808" />
+                            </g>
+                            <g>
+                              <path d="M70 106v-17c0-15 11-26 25-26s25 11 25 26v17l-8-6-9 6-8-6-9 6-8-6z" fill="#ed2535" />
+                              <circle cx="88" cy="86" r="7" fill="white"/><circle cx="103" cy="86" r="7" fill="white"/>
+                              <circle cx="90" cy="87" r="3.2" fill="#123b92"/><circle cx="105" cy="87" r="3.2" fill="#123b92"/>
+                              <path d="M275 304v-17c0-15 11-26 25-26s25 11 25 26v17l-8-6-9 6-8-6-9 6-8-6z" fill="#ed2535" />
+                              <circle cx="293" cy="284" r="7" fill="white"/><circle cx="308" cy="284" r="7" fill="white"/>
+                              <circle cx="295" cy="285" r="3.2" fill="#123b92"/><circle cx="310" cy="285" r="3.2" fill="#123b92"/>
+                              <path d="M285 120v-14c0-14 10-24 23-24s23 10 23 24v14l-8-5-8 5-8-5-8 5-8-5z" fill="#ffae24"/>
+                              <circle cx="302" cy="103" r="6" fill="white"/><circle cx="316" cy="103" r="6" fill="white"/>
+                              <circle cx="304" cy="104" r="2.8" fill="#123b92"/><circle cx="318" cy="104" r="2.8" fill="#123b92"/>
+                              <path d="M87 315v-14c0-14 10-24 23-24s23 10 23 24v14l-8-5-8 5-8-5-8 5-8-5z" fill="#62bd42"/>
+                              <circle cx="104" cy="298" r="6" fill="white"/><circle cx="118" cy="298" r="6" fill="white"/>
+                              <circle cx="106" cy="299" r="2.8" fill="#123b92"/><circle cx="120" cy="299" r="2.8" fill="#123b92"/>
+                            </g>
+                            <g stroke="#54c75a" strokeWidth="5" fill="none" strokeLinecap="round">
+                              <path d="M70 145q-8-20 8-28M70 145q15-22 27-16" />
+                              <path d="M330 224q-8-20 8-28M330 224q15-22 27-16" />
+                              <path d="M196 345q-8-20 8-28M196 345q15-22 27-16" />
+                            </g>
+                            <g fill="#ed1d35">
+                              <circle cx="69" cy="151" r="9"/><circle cx="87" cy="151" r="9"/>
+                              <circle cx="329" cy="230" r="9"/><circle cx="347" cy="230" r="9"/>
+                              <circle cx="195" cy="351" r="9"/><circle cx="213" cy="351" r="9"/>
+                            </g>
+                            <circle cx="200" cy="200" r="196" fill="none" stroke="#073bff" strokeWidth="3" opacity=".75"/>
+                          </g>
+                        </svg>
                       ) : project.gifUrl ? <img src={project.gifUrl} alt={project.gifAlt ?? project.title} loading="lazy" className="w-full h-full object-cover" /> : <><Film className="w-8 h-8 text-zinc-700 mb-2" aria-hidden="true" /><span className="text-xs font-semibold text-zinc-500">Em breve · GIF sem som</span></>}
                     </div>
                     <h3 className={`text-xl font-bold mb-1.5 ${project.isPlaceholder ? 'text-zinc-400' : 'text-white group-hover:text-zinc-200 transition-colors'}`}>{project.title}</h3>
