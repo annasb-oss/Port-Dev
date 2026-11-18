@@ -240,7 +240,7 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     title: 'Adivinhe o Número',
     description:
       'Jogo de adivinhação feito no Scratch como primeiro projeto prático de programação. O computador escolhe um número secreto entre 1 e 10, e o jogador tenta descobri-lo fazendo palpites. A cada erro, o jogo indica se o palpite foi baixo demais ou alto demais.',
-    gifUrl: `${import.meta.env.BASE_URL}assets/adivinhe-o-numero.png`,
+    gifUrl: `${import.meta.env.BASE_URL}assets/adivinhe-o-numero.png?v=20261118-1732`,
     gifAlt: 'Tela do jogo Adivinhe o Número feito no Scratch exibindo o botão de iniciar',
     repoUrl: 'https://github.com/annasb-oss/adivinhe-o-numero',
     repoLabel: 'github.com/annasb-oss/adivinhe-o-numero',
