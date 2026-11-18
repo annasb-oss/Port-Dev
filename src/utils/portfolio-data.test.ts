@@ -80,7 +80,7 @@ test('VIDEO_PROJECTS includes the PAC-MAN study game and Adivinhe o Número proj
   const guess = VIDEO_PROJECTS.find((p) => p.id === 'adivinhe-o-numero');
   assert.ok(guess);
   assert.equal(guess?.title, 'Adivinhe o Número');
-  assert.equal(guess?.gifUrl, '/assets/adivinhe-o-numero.png');
+  assert.equal(guess?.gifUrl, '/assets/adivinhe-o-numero.png?v=20261118-1732');
   assert.equal(guess?.repoUrl, 'https://github.com/annasb-oss/adivinhe-o-numero');
 });
 
