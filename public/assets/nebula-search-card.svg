@@ -1,1 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs><radialGradient id="bg" cx="50%" cy="43%" r="75%"><stop offset="0" stop-color="#172554"/><stop offset=".58" stop-color="#080d20"/><stop offset="1" stop-color="#03050d"/></radialGradient><linearGradient id="nebula" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8b5cf6"/><stop offset=".52" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4b5fd"/><stop offset="1" stop-color="#38bdf8"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="round"><rect width="1024" height="1024" rx="100"/></clipPath></defs><g clip-path="url(#round)"><rect width="1024" height="1024" fill="url(#bg)"/><g opacity=".24" stroke="#6474d8" stroke-width="3" fill="none"><path d="M120 250L300 340L490 210L710 310L890 190M120 250L180 550L370 680L590 550L820 700L930 500M300 340L370 680M490 210L590 550M710 310L820 700M180 550L390 460L590 550L760 460L930 500"/></g><g fill="#8b5cf6" opacity=".9" filter="url(#glow)"><circle cx="120" cy="250" r="9"/><circle cx="300" cy="340" r="8"/><circle cx="490" cy="210" r="10"/><circle cx="710" cy="310" r="8"/><circle cx="890" cy="190" r="9"/><circle cx="180" cy="550" r="8"/><circle cx="370" cy="680" r="10"/><circle cx="590" cy="550" r="8"/><circle cx="820" cy="700" r="9"/><circle cx="930" cy="500" r="8"/></g><ellipse cx="512" cy="460" rx="340" ry="285" fill="#4f46e5" opacity=".13" filter="url(#glow)"/><path d="M240 620C300 470 390 390 520 400C650 410 720 500 790 610C700 700 600 760 470 740C360 725 290 690 240 620Z" fill="url(#nebula)" opacity=".22" filter="url(#glow)"/><g transform="translate(512 470)" filter="url(#glow)"><circle r="190" fill="none" stroke="url(#glass)" stroke-width="34" opacity=".95"/><path d="M135 135L290 290" stroke="url(#glass)" stroke-width="48" stroke-linecap="round"/><circle r="126" fill="#0b1025" opacity=".75"/><path d="M-72 -28C-42 -82 26 -91 76 -51M-72 34C-24 88 44 75 80 26" fill="none" stroke="#67e8f9" stroke-width="12" stroke-linecap="round" opacity=".9"/><circle cx="-38" cy="-28" r="11" fill="#c4b5fd"/><circle cx="45" cy="34" r="11" fill="#67e8f9"/></g><g fill="#e2e8f0" opacity=".9"><circle cx="170" cy="150" r="4"/><circle cx="835" cy="360" r="5"/><circle cx="220" cy="820" r="4"/><circle cx="780" cy="850" r="4"/><circle cx="700" cy="140" r="3"/><circle cx="350" cy="180" r="3"/></g><text x="512" y="835" text-anchor="middle" font-family="Arial,sans-serif" font-size="76" font-weight="700" letter-spacing="9" fill="#f8fafc">NEBULA</text><text x="512" y="900" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="500" letter-spacing="15" fill="#67e8f9">SEARCH</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+ <radialGradient id="bg" cx="50%" cy="42%" r="78%"><stop stop-color="#172554"/><stop offset=".62" stop-color="#080d1d"/><stop offset="1" stop-color="#02040b"/></radialGradient>
+ <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a3ff5f"/><stop offset=".48" stop-color="#35e6c5"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+ <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9b8cff"/><stop offset=".55" stop-color="#536dfe"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+ <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="32"/></filter>
+ <clipPath id="clip"><rect width="1024" height="1024" rx="92"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+ <rect width="1024" height="1024" fill="url(#bg)"/>
+ <circle cx="510" cy="445" r="330" fill="#2446c7" opacity=".13" filter="url(#soft)"/>
+ <!-- crawl graph -->
+ <g fill="none" stroke="#354b9b" stroke-width="5" opacity=".58" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M130 260L300 330L470 210L650 290L850 180M130 260L190 520L355 660L540 540L760 700L890 480"/>
+  <path d="M300 330L355 660M470 210L540 540M650 290L760 700M190 520L390 440L540 540L720 440L890 480"/>
+  <path d="M130 260L300 330L390 440M650 290L720 440L850 180"/>
+ </g>
+ <!-- highlighted crawl paths -->
+ <g fill="none" stroke="url(#trace)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+  <path d="M190 520L390 440L540 540L720 440L890 480"/>
+  <path d="M470 210L540 540L760 700"/>
+  <path d="M300 330L470 210L650 290"/>
+ </g>
+ <!-- indexed pages -->
+ <g fill="#0d1834" stroke="#56d9ee" stroke-width="5">
+  <rect x="82" y="205" width="86" height="72" rx="14"/><rect x="260" y="285" width="86" height="72" rx="14"/>
+  <rect x="430" y="165" width="86" height="72" rx="14"/><rect x="610" y="250" width="86" height="72" rx="14"/>
+  <rect x="810" y="140" width="86" height="72" rx="14"/><rect x="148" y="485" width="86" height="72" rx="14"/>
+  <rect x="315" y="625" width="86" height="72" rx="14"/><rect x="500" y="505" width="86" height="72" rx="14"/>
+  <rect x="720" y="665" width="86" height="72" rx="14"/><rect x="850" y="445" width="86" height="72" rx="14"/>
+ </g>
+ <g fill="#a3ff5f" filter="url(#glow)">
+  <circle cx="125" cy="241" r="9"/><circle cx="303" cy="321" r="9"/><circle cx="473" cy="201" r="10"/>
+  <circle cx="653" cy="281" r="9"/><circle cx="853" cy="171" r="9"/><circle cx="193" cy="521" r="9"/>
+  <circle cx="358" cy="661" r="9"/><circle cx="543" cy="541" r="10"/><circle cx="763" cy="701" r="9"/><circle cx="893" cy="481" r="9"/>
+ </g>
+ <!-- spiderbot: eight distinct legs and a compact body -->
+ <g transform="translate(515 435)" stroke="#b9c8ff" stroke-width="19" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <path d="M-45 -42L-118 -112L-190 -112L-235 -165"/>
+  <path d="M-58 -15L-150 -42L-220 -10L-270 -45"/>
+  <path d="M-58 24L-150 72L-218 55L-265 100"/>
+  <path d="M-38 50L-100 145L-165 165L-205 215"/>
+  <path d="M45 -42L118 -112L190 -112L235 -165"/>
+  <path d="M58 -15L150 -42L220 -10L270 -45"/>
+  <path d="M58 24L150 72L218 55L265 100"/>
+  <path d="M38 50L100 145L165 165L205 215"/>
+ </g>
+ <g transform="translate(515 435)" filter="url(#glow)">
+  <ellipse cy="0" rx="91" ry="105" fill="url(#body)" stroke="#d7e4ff" stroke-width="9"/>
+  <ellipse cx="-34" cy="-23" rx="24" ry="30" fill="#f8fbff"/>
+  <ellipse cx="34" cy="-23" rx="24" ry="30" fill="#f8fbff"/>
+  <circle cx="-29" cy="-18" r="11" fill="#101a3b"/><circle cx="39" cy="-18" r="11" fill="#101a3b"/>
+  <path d="M-31 39Q0 62 31 39" fill="none" stroke="#10224b" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="-65" cy="58" r="9" fill="#a3ff5f"/><circle cx="65" cy="58" r="9" fill="#a3ff5f"/>
+ </g>
+ <!-- active scan marker -->
+ <g transform="translate(760 700)" filter="url(#glow)">
+  <circle r="31" fill="#a3ff5f" opacity=".2"/><circle r="13" fill="#c4ff83"/>
+  <path d="M-4 -49L-4 -20M-4 20L-4 49M-49 -4L-20 -4M20 -4L49 -4" stroke="#c4ff83" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <g fill="#e5f2ff" opacity=".8"><circle cx="205" cy="115" r="4"/><circle cx="780" cy="105" r="4"/><circle cx="910" cy="330" r="4"/><circle cx="105" cy="735" r="4"/><circle cx="880" cy="790" r="4"/></g>
+ <text x="512" y="855" text-anchor="middle" font-family="Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="8" fill="#f8fafc">NEBULA</text>
+ <text x="512" y="918" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="600" letter-spacing="15" fill="#67e8f9">SEARCH</text>
+</g></svg>
