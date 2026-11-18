@@ -51,7 +51,7 @@ export default function TechStackSection() {
                           alt="Arte quadrada do jogo PAC-MAN Arcade com labirinto azul, pontos amarelos, fantasmas e frutas"
                           loading="eager"
                           decoding="async"
-                          className="absolute inset-0 block h-full w-full object-cover"
+                          className="absolute inset-0 block h-full w-full rounded-full object-cover"
                         />
                       ) : project.gifUrl ? <img src={project.gifUrl} alt={project.gifAlt ?? project.title} loading="lazy" className="w-full h-full object-cover" /> : <><Film className="w-8 h-8 text-zinc-700 mb-2" aria-hidden="true" /><span className="text-xs font-semibold text-zinc-500">Em breve · GIF sem som</span></>}
                     </div>
