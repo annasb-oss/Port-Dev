@@ -1,96 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
-<title id="title">Nebula Search — aranha roxa caminhando sobre código Java</title>
-<desc id="desc">Aranha neon roxa caminha de um lado ao outro na parte superior de um editor com várias linhas de código Java de um web crawler.</desc>
+<title id="title">Nebula Search — aranha caminhando sobre números e código Java</title>
+<desc id="desc">Código Java sobe continuamente em um editor. Uma aranha neon roxa caminha verticalmente por cima dos números das linhas, destacando o código em rosa.</desc>
 <defs>
  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#080610"/><stop offset="1" stop-color="#13091c"/></linearGradient>
  <linearGradient id="spider" x2="1" y2="1"><stop stop-color="#ffb4f5"/><stop offset=".45" stop-color="#e84bd9"/><stop offset="1" stop-color="#9235c8"/></linearGradient>
  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
- <filter id="haze" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="28"/></filter>
  <clipPath id="screen"><rect x="36" y="40" width="728" height="720" rx="20"/></clipPath>
 </defs>
 <rect width="800" height="800" fill="url(#bg)"/>
-<circle cx="400" cy="210" r="230" fill="#a832c0" opacity=".12" filter="url(#haze)"/>
 <rect x="36" y="40" width="728" height="720" rx="20" fill="#0b0a12" stroke="#50365e" stroke-width="2"/>
 <path d="M56 40H744a20 20 0 0 1 20 20v43H36V60a20 20 0 0 1 20-20Z" fill="#211729"/>
 <circle cx="66" cy="69" r="6" fill="#ff718e"/><circle cx="89" cy="69" r="6" fill="#ffd16d"/><circle cx="112" cy="69" r="6" fill="#8be5a2"/>
-<text x="145" y="75" fill="#c7b4d1" font-family="Arial,sans-serif" font-size="14">NEBULA SEARCH  /  CRAWLER.JAVA</text>
+<text x="145" y="75" fill="#c7b4d1" font-family="Arial,sans-serif" font-size="14">NEBULA SEARCH / NebulaCrawler.java</text>
 <g clip-path="url(#screen)">
  <rect x="37" y="103" width="726" height="657" fill="#0b0a12"/>
- <rect x="37" y="103" width="49" height="657" fill="#100d17"/>
- <path d="M86 103V760" stroke="#2b2033"/>
- <g fill="#766481" font-family="monospace" font-size="15" text-anchor="end">
-  <text x="75" y="280">01</text><text x="75" y="299">02</text><text x="75" y="318">03</text><text x="75" y="337">04</text><text x="75" y="356">05</text><text x="75" y="375">06</text><text x="75" y="394">07</text><text x="75" y="413">08</text><text x="75" y="432">09</text><text x="75" y="489">10</text><text x="75" y="470">11</text><text x="75" y="451">12</text><text x="75" y="508">13</text><text x="75" y="527">14</text><text x="75" y="546">15</text><text x="75" y="565">16</text><text x="75" y="584">17</text><text x="75" y="603">18</text><text x="75" y="622">19</text><text x="75" y="641">20</text><text x="75" y="660">21</text><text x="75" y="679">22</text>
- </g>
+ <rect x="37" y="103" width="80" height="657" fill="#100d17"/>
+ <path d="M117 103V760" stroke="#2b2033"/>
  <g font-family="monospace">
-  <g opacity=".20"><path d="M110 150H725M110 690H725" stroke="#9d55b7" stroke-dasharray="3 9"/></g>
-  <g><text x="72" y="300" fill="#d89cff" font-size="17">public class NebulaCrawler {</text>
-<text x="72" y="319" fill="#b8a9c9" font-size="17">  private final WebClient client;</text>
-<text x="72" y="338" fill="#d89cff" font-size="17">  public CrawlResult scan(String url) {</text>
-<text x="72" y="357" fill="#b8a9c9" font-size="17">    URI target = URI.create(url);</text>
-<text x="72" y="376" fill="#b8a9c9" font-size="17">    RobotsPolicy policy = robots.load(target);</text>
-<text x="72" y="395" fill="#e9a7f4" font-size="17">    if (!policy.isAllowed(target)) return SKIPPED;</text>
-<text x="72" y="414" fill="#b8a9c9" font-size="17">    Document page = client.get(target);</text>
-<text x="72" y="433" fill="#b8a9c9" font-size="17">    Set&lt;URI&gt; links = extractLinks(page);</text>
-<text x="72" y="452" fill="#b8a9c9" font-size="17">    links.forEach(queue::offer);</text>
-<text x="72" y="471" fill="#e9a7f4" font-size="17">    return indexer.store(page);</text>
-<text x="72" y="490" fill="#b8a9c9" font-size="17">  }</text>
-<text x="72" y="509" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="528" fill="#d89cff" font-size="17">@Service</text>
-<text x="72" y="547" fill="#d89cff" font-size="17">public class MetadataExtractor {</text>
-<text x="72" y="566" fill="#d89cff" font-size="17">  public Metadata parse(Document html) {</text>
-<text x="72" y="585" fill="#b8a9c9" font-size="17">    String title = html.title();</text>
-<text x="72" y="604" fill="#b8a9c9" font-size="17">    String description = html.select("meta");</text>
-<text x="72" y="623" fill="#e9a7f4" font-size="17">    return new Metadata(title, description);</text>
-<text x="72" y="642" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="661" fill="#d89cff" font-size="17">@Transactional</text>
-<text x="72" y="680" fill="#d89cff" font-size="17">public void savePage(CrawlPage page) {</text>
-<text x="72" y="699" fill="#b8a9c9" font-size="17">  repository.save(page);</text>
-<text x="72" y="769" fill="#b8a9c9" font-size="17">  log.info("Indexed: {}", page.url());</text>
-<text x="72" y="796" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="823" fill="#d89cff" font-size="17">public boolean isAllowed(URI uri) {</text>
-<text x="72" y="850" fill="#e9a7f4" font-size="17">  return robotsRules.matches(uri);</text>
-<text x="72" y="877" fill="#b8a9c9" font-size="17">}</text>
-</g>
-  <g opacity=".40" transform="translate(0 650)"><text x="72" y="175" fill="#d89cff" font-size="17">public class NebulaCrawler {</text>
-<text x="72" y="202" fill="#b8a9c9" font-size="17">  private final WebClient client;</text>
-<text x="72" y="229" fill="#d89cff" font-size="17">  public CrawlResult scan(String url) {</text>
-<text x="72" y="256" fill="#b8a9c9" font-size="17">    URI target = URI.create(url);</text>
-<text x="72" y="283" fill="#b8a9c9" font-size="17">    RobotsPolicy policy = robots.load(target);</text>
-<text x="72" y="310" fill="#e9a7f4" font-size="17">    if (!policy.isAllowed(target)) return SKIPPED;</text>
-<text x="72" y="337" fill="#b8a9c9" font-size="17">    Document page = client.get(target);</text>
-<text x="72" y="364" fill="#b8a9c9" font-size="17">    Set&lt;URI&gt; links = extractLinks(page);</text>
-<text x="72" y="391" fill="#b8a9c9" font-size="17">    links.forEach(queue::offer);</text>
-<text x="72" y="418" fill="#e9a7f4" font-size="17">    return indexer.store(page);</text>
-<text x="72" y="445" fill="#b8a9c9" font-size="17">  }</text>
-<text x="72" y="472" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="499" fill="#d89cff" font-size="17">@Service</text>
-<text x="72" y="526" fill="#d89cff" font-size="17">public class MetadataExtractor {</text>
-<text x="72" y="553" fill="#d89cff" font-size="17">  public Metadata parse(Document html) {</text>
-<text x="72" y="580" fill="#b8a9c9" font-size="17">    String title = html.title();</text>
-<text x="72" y="607" fill="#b8a9c9" font-size="17">    String description = html.select("meta");</text>
-<text x="72" y="634" fill="#e9a7f4" font-size="17">    return new Metadata(title, description);</text>
-<text x="72" y="661" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="688" fill="#d89cff" font-size="17">@Transactional</text>
-<text x="72" y="715" fill="#d89cff" font-size="17">public void savePage(CrawlPage page) {</text>
-<text x="72" y="742" fill="#b8a9c9" font-size="17">  repository.save(page);</text>
-<text x="72" y="769" fill="#b8a9c9" font-size="17">  log.info("Indexed: {}", page.url());</text>
-<text x="72" y="796" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="823" fill="#d89cff" font-size="17">public boolean isAllowed(URI uri) {</text>
-<text x="72" y="850" fill="#e9a7f4" font-size="17">  return robotsRules.matches(uri);</text>
-<text x="72" y="877" fill="#b8a9c9" font-size="17">}</text>
-</g>
- </g>
- <!-- Purple spider stays in the upper code area and walks horizontally -->
- <g transform="translate(48 142)"><g id="walking-spider" filter="url(#glow)">
-  <animateMotion dur="12s" repeatCount="indefinite" rotate="0" path="M0 0 C70 -22 130 18 190 0 S310 -20 380 0 S510 20 570 0 S690 -18 620 0 S490 18 380 0 S220 -16 0 0"/>
-  <g transform="translate(-48 -58) scale(.38)">
-   <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="#f05bdc" stroke-width="6" stroke-linejoin="round" opacity=".95"/>
-   <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="url(#spider)" stroke-width="2.5" stroke-linejoin="round"/>
+  <g opacity=".10" stroke="#9d55b7"><path d="M130 185H735M130 305H735M130 425H735M130 545H735M130 665H735"/></g>
+  <g>
+   <g transform="translate(0 0)"><text x="103" y="168" fill="#74657f" font-size="13" text-anchor="end">01</text><text x="126" y="168" fill="#d49cff" font-size="15">public class NebulaCrawler {</text><text x="103" y="192" fill="#74657f" font-size="13" text-anchor="end">02</text><text x="126" y="192" fill="#c9bdd2" font-size="15">  private final WebClient client;</text><text x="103" y="216" fill="#74657f" font-size="13" text-anchor="end">03</text><text x="126" y="216" fill="#d49cff" font-size="15">  public CrawlResult scan(String url) {</text><text x="103" y="240" fill="#74657f" font-size="13" text-anchor="end">04</text><text x="126" y="240" fill="#c9bdd2" font-size="15">    URI target = URI.create(url);</text><text x="103" y="264" fill="#74657f" font-size="13" text-anchor="end">05</text><text x="126" y="264" fill="#c9bdd2" font-size="15">    RobotsPolicy policy = robots.load(target);</text><text x="103" y="288" fill="#74657f" font-size="13" text-anchor="end">06</text><text x="126" y="288" fill="#f18bdc" font-size="15">    if (!policy.isAllowed(target)) return SKIPPED;</text><text x="103" y="312" fill="#74657f" font-size="13" text-anchor="end">07</text><text x="126" y="312" fill="#c9bdd2" font-size="15">    Document page = client.get(target);</text><text x="103" y="336" fill="#74657f" font-size="13" text-anchor="end">08</text><text x="126" y="336" fill="#c9bdd2" font-size="15">    Set&lt;URI&gt; links = extractLinks(page);</text><text x="103" y="360" fill="#74657f" font-size="13" text-anchor="end">09</text><text x="126" y="360" fill="#c9bdd2" font-size="15">    links.forEach(queue::offer);</text><text x="103" y="384" fill="#74657f" font-size="13" text-anchor="end">10</text><text x="126" y="384" fill="#f18bdc" font-size="15">    return indexer.store(page);</text><text x="103" y="408" fill="#74657f" font-size="13" text-anchor="end">11</text><text x="126" y="408" fill="#c9bdd2" font-size="15">  }</text><text x="103" y="432" fill="#74657f" font-size="13" text-anchor="end">12</text><text x="126" y="432" fill="#d49cff" font-size="15">}</text><text x="103" y="456" fill="#74657f" font-size="13" text-anchor="end">13</text><text x="126" y="456" fill="#f18bdc" font-size="15">@Service</text><text x="103" y="480" fill="#74657f" font-size="13" text-anchor="end">14</text><text x="126" y="480" fill="#d49cff" font-size="15">public class MetadataExtractor {</text><text x="103" y="504" fill="#74657f" font-size="13" text-anchor="end">15</text><text x="126" y="504" fill="#c9bdd2" font-size="15">  public Metadata parse(Document html) {</text><text x="103" y="528" fill="#74657f" font-size="13" text-anchor="end">16</text><text x="126" y="528" fill="#c9bdd2" font-size="15">    String title = html.title();</text><text x="103" y="552" fill="#74657f" font-size="13" text-anchor="end">17</text><text x="126" y="552" fill="#c9bdd2" font-size="15">    String description = html.select(&quot;meta&quot;);</text><text x="103" y="576" fill="#74657f" font-size="13" text-anchor="end">18</text><text x="126" y="576" fill="#f18bdc" font-size="15">    return new Metadata(title, description);</text><text x="103" y="600" fill="#74657f" font-size="13" text-anchor="end">19</text><text x="126" y="600" fill="#c9bdd2" font-size="15">  }</text><text x="103" y="624" fill="#74657f" font-size="13" text-anchor="end">20</text><text x="126" y="624" fill="#d49cff" font-size="15">}</text><text x="103" y="648" fill="#74657f" font-size="13" text-anchor="end">21</text><text x="126" y="648" fill="#f18bdc" font-size="15">@Transactional</text><text x="103" y="672" fill="#74657f" font-size="13" text-anchor="end">22</text><text x="126" y="672" fill="#d49cff" font-size="15">public void savePage(CrawlPage page) {</text><text x="103" y="696" fill="#74657f" font-size="13" text-anchor="end">23</text><text x="126" y="696" fill="#c9bdd2" font-size="15">  repository.save(page);</text><text x="103" y="720" fill="#74657f" font-size="13" text-anchor="end">24</text><text x="126" y="720" fill="#f18bdc" font-size="15">  log.info(&quot;Indexed: {}&quot;, page.url());</text><text x="103" y="744" fill="#74657f" font-size="13" text-anchor="end">25</text><text x="126" y="744" fill="#c9bdd2" font-size="15">}</text></g>
+   <g transform="translate(0 600)"><text x="103" y="168" fill="#74657f" font-size="13" text-anchor="end">01</text><text x="126" y="168" fill="#d49cff" font-size="15">public class NebulaCrawler {</text><text x="103" y="192" fill="#74657f" font-size="13" text-anchor="end">02</text><text x="126" y="192" fill="#c9bdd2" font-size="15">  private final WebClient client;</text><text x="103" y="216" fill="#74657f" font-size="13" text-anchor="end">03</text><text x="126" y="216" fill="#d49cff" font-size="15">  public CrawlResult scan(String url) {</text><text x="103" y="240" fill="#74657f" font-size="13" text-anchor="end">04</text><text x="126" y="240" fill="#c9bdd2" font-size="15">    URI target = URI.create(url);</text><text x="103" y="264" fill="#74657f" font-size="13" text-anchor="end">05</text><text x="126" y="264" fill="#c9bdd2" font-size="15">    RobotsPolicy policy = robots.load(target);</text><text x="103" y="288" fill="#74657f" font-size="13" text-anchor="end">06</text><text x="126" y="288" fill="#f18bdc" font-size="15">    if (!policy.isAllowed(target)) return SKIPPED;</text><text x="103" y="312" fill="#74657f" font-size="13" text-anchor="end">07</text><text x="126" y="312" fill="#c9bdd2" font-size="15">    Document page = client.get(target);</text><text x="103" y="336" fill="#74657f" font-size="13" text-anchor="end">08</text><text x="126" y="336" fill="#c9bdd2" font-size="15">    Set&lt;URI&gt; links = extractLinks(page);</text><text x="103" y="360" fill="#74657f" font-size="13" text-anchor="end">09</text><text x="126" y="360" fill="#c9bdd2" font-size="15">    links.forEach(queue::offer);</text><text x="103" y="384" fill="#74657f" font-size="13" text-anchor="end">10</text><text x="126" y="384" fill="#f18bdc" font-size="15">    return indexer.store(page);</text><text x="103" y="408" fill="#74657f" font-size="13" text-anchor="end">11</text><text x="126" y="408" fill="#c9bdd2" font-size="15">  }</text><text x="103" y="432" fill="#74657f" font-size="13" text-anchor="end">12</text><text x="126" y="432" fill="#d49cff" font-size="15">}</text><text x="103" y="456" fill="#74657f" font-size="13" text-anchor="end">13</text><text x="126" y="456" fill="#f18bdc" font-size="15">@Service</text><text x="103" y="480" fill="#74657f" font-size="13" text-anchor="end">14</text><text x="126" y="480" fill="#d49cff" font-size="15">public class MetadataExtractor {</text><text x="103" y="504" fill="#74657f" font-size="13" text-anchor="end">15</text><text x="126" y="504" fill="#c9bdd2" font-size="15">  public Metadata parse(Document html) {</text><text x="103" y="528" fill="#74657f" font-size="13" text-anchor="end">16</text><text x="126" y="528" fill="#c9bdd2" font-size="15">    String title = html.title();</text><text x="103" y="552" fill="#74657f" font-size="13" text-anchor="end">17</text><text x="126" y="552" fill="#c9bdd2" font-size="15">    String description = html.select(&quot;meta&quot;);</text><text x="103" y="576" fill="#74657f" font-size="13" text-anchor="end">18</text><text x="126" y="576" fill="#f18bdc" font-size="15">    return new Metadata(title, description);</text><text x="103" y="600" fill="#74657f" font-size="13" text-anchor="end">19</text><text x="126" y="600" fill="#c9bdd2" font-size="15">  }</text><text x="103" y="624" fill="#74657f" font-size="13" text-anchor="end">20</text><text x="126" y="624" fill="#d49cff" font-size="15">}</text><text x="103" y="648" fill="#74657f" font-size="13" text-anchor="end">21</text><text x="126" y="648" fill="#f18bdc" font-size="15">@Transactional</text><text x="103" y="672" fill="#74657f" font-size="13" text-anchor="end">22</text><text x="126" y="672" fill="#d49cff" font-size="15">public void savePage(CrawlPage page) {</text><text x="103" y="696" fill="#74657f" font-size="13" text-anchor="end">23</text><text x="126" y="696" fill="#c9bdd2" font-size="15">  repository.save(page);</text><text x="103" y="720" fill="#74657f" font-size="13" text-anchor="end">24</text><text x="126" y="720" fill="#f18bdc" font-size="15">  log.info(&quot;Indexed: {}&quot;, page.url());</text><text x="103" y="744" fill="#74657f" font-size="13" text-anchor="end">25</text><text x="126" y="744" fill="#c9bdd2" font-size="15">}</text></g>
+   <animateTransform attributeName="transform" type="translate" from="0 0" to="0 -600" dur="14s" repeatCount="indefinite"/>
   </g>
- </g></g>
- <path d="M110 156H730" stroke="#8d4ba6" stroke-opacity=".28" stroke-dasharray="4 10"/>
- <rect x="535" y="713" width="195" height="27" rx="13" fill="#21152b" stroke="#684078"/>
- <circle cx="551" cy="726" r="4" fill="#e45be1"><animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/></circle>
- <text x="565" y="730" fill="#d9c3e4" font-family="monospace" font-size="11">JAVA · CRAWLING</text>
-</g>
-</svg>
+ </g>
+ <!-- Pink current-line highlight travels with the spider over the line-number gutter -->
+ <g opacity=".9">
+  <rect x="46" y="0" width="122" height="38" rx="10" fill="#f04bd5" opacity=".28" stroke="#ff80ec" stroke-width="1.6">
+   <animate attributeName="y" values="145;650;145" dur="12s" repeatCount="indefinite"/>
+  </rect>
+ </g>
+ <!-- Spider silhouette is over the line numbers, in the same central reading position as the reference -->
+ <g filter="url(#glow)">
+  <animateMotion dur="12s" repeatCount="indefinite" rotate="0" path="M0 0 C-5 95 7 185 0 275 S-7 455 0 525 S7 455 0 275 S-5 95 0 0"/>
+  <g transform="translate(55 155) scale(.22)">
+   <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="#f05bdc" stroke-width="7" stroke-linejoin="round" opacity=".98"/>
+   <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="url(#spider)" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+ </g>
+ <rect x="525" y="713" width="205" height="27" rx="13" fill="#21152b" stroke="#684078"/>
+ <circle cx="541" cy="726" r="4" fill="#e45be1"><animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/></circle>
+ <text x="555" y="730" fill="#d9c3e4" font-family="monospace" font-size="11">JAVA · AUTO SCROLL</text>
+</g></svg>
