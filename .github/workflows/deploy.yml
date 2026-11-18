@@ -1,4 +1,5 @@
 name: Deploy portfolio to GitHub Pages
+# Rebuild Pages when portfolio assets are refreshed.
 
 on:
   push:
