@@ -63,7 +63,17 @@ export default function TechStackSection() {
                             </pattern>
                           </defs>
                           <g>
-                            <rect width="400" height="400" fill="#03<g strokeLinejoin="round">
+                            <rect width="400" height="400" fill="#030303" />
+                            <rect width="400" height="400" fill="url(#pacman-dots)" />
+                            <g fill="#030303" stroke="#073bff" strokeWidth="5" strokeLinejoin="round">
+                              <path d="M22 34h112v28H52v42H18V58h4zM266 34h112v28H296v42h-30zM18 148h82v28H48v50H18zM300 148h82v28h-52v50h-30zM20 270h100v26H48v42H20zM280 270h100v26h-70v42h-30zM145 18h28v90h-28zM228 18h28v90h-28zM145 292h28v90h-28zM228 292h28v90h-28z" />
+                              <path d="M90 128h220v16H90zM90 256h220v16H90z" />
+                            </g>
+                            <g fill="#ffdc24">
+                              <path d="M194 168a38 38 0 1 0 0 64l-31-32z" />
+                              <circle cx="190" cy="185" r="5" fill="#080808" />
+                            </g>
+                            <g strokeLinejoin="round">
                               <g transform="translate(70 63)">
                                 <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="#650d20" opacity=".75" transform="translate(0 3)"/>
                                 <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="url(#ghost-red)" stroke="#ff9aa3" strokeWidth="1.4"/>
@@ -100,14 +110,6 @@ export default function TechStackSection() {
                                 <circle cx="20" cy="22" r="3.7" fill="#16418d"/><circle cx="35" cy="22" r="3.7" fill="#16418d"/>
                                 <circle cx="21.2" cy="20.5" r="1.4" fill="#fff"/><circle cx="36.2" cy="20.5" r="1.4" fill="#fff"/>
                               </g>
-                            </g>
-                            y="285" r="3.2" fill="#123b92"/>
-                              <path d="M285 120v-14c0-14 10-24 23-24s23 10 23 24v14l-8-5-8 5-8-5-8 5-8-5z" fill="#ffae24"/>
-                              <circle cx="302" cy="103" r="6" fill="white"/><circle cx="316" cy="103" r="6" fill="white"/>
-                              <circle cx="304" cy="104" r="2.8" fill="#123b92"/><circle cx="318" cy="104" r="2.8" fill="#123b92"/>
-                              <path d="M87 315v-14c0-14 10-24 23-24s23 10 23 24v14l-8-5-8 5-8-5-8 5-8-5z" fill="#62bd42"/>
-                              <circle cx="104" cy="298" r="6" fill="white"/><circle cx="118" cy="298" r="6" fill="white"/>
-                              <circle cx="106" cy="299" r="2.8" fill="#123b92"/><circle cx="120" cy="299" r="2.8" fill="#123b92"/>
                             </g>
                             <g stroke="#54c75a" strokeWidth="5" fill="none" strokeLinecap="round">
                               <path d="M70 145q-8-20 8-28M70 145q15-22 27-16" />
