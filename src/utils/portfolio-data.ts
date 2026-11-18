@@ -223,10 +223,22 @@ export interface VideoProjectItem {
   gifAlt?: string;
   repoUrl?: string;
   repoLabel?: string;
+  liveUrl?: string;
   isPlaceholder?: boolean;
 }
 
 export const VIDEO_PROJECTS: VideoProjectItem[] = [
+  {
+    id: 'webspider',
+    title: 'WEBSPIDER — The Internet Explorer Engine',
+    description:
+      'Projeto de exploração da web com interface própria e recursos para investigar páginas e analisar sinais de confiabilidade de conteúdo.',
+    gifUrl: `${import.meta.env.BASE_URL}assets/webspider-preview.png?v=20261118`,
+    gifAlt: 'Captura real da tela inicial do WEBSPIDER — The Internet Explorer Engine',
+    liveUrl: 'https://annasb-oss.github.io/WEBSPIDER---THE-INTERNET-EXPLORER-ENGINE-/',
+    repoUrl: 'https://github.com/annasb-oss/WEBSPIDER---THE-INTERNET-EXPLORER-ENGINE-',
+    repoLabel: 'Código no GitHub',
+  },
   {
     id: 'pacman',
     title: 'PAC-MAN · Arcade',
