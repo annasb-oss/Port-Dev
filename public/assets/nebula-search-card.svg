@@ -1,65 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
 <defs>
- <radialGradient id="bg" cx="50%" cy="42%" r="78%"><stop stop-color="#172554"/><stop offset=".62" stop-color="#080d1d"/><stop offset="1" stop-color="#02040b"/></radialGradient>
- <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a3ff5f"/><stop offset=".48" stop-color="#35e6c5"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
- <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9b8cff"/><stop offset=".55" stop-color="#536dfe"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
- <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
- <filter id="soft"><feGaussianBlur stdDeviation="32"/></filter>
- <clipPath id="clip"><rect width="1024" height="1024" rx="92"/></clipPath>
-</defs>
-<g clip-path="url(#clip)">
- <rect width="1024" height="1024" fill="url(#bg)"/>
- <circle cx="510" cy="445" r="330" fill="#2446c7" opacity=".13" filter="url(#soft)"/>
- <!-- crawl graph -->
- <g fill="none" stroke="#354b9b" stroke-width="5" opacity=".58" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M130 260L300 330L470 210L650 290L850 180M130 260L190 520L355 660L540 540L760 700L890 480"/>
-  <path d="M300 330L355 660M470 210L540 540M650 290L760 700M190 520L390 440L540 540L720 440L890 480"/>
-  <path d="M130 260L300 330L390 440M650 290L720 440L850 180"/>
+ <radialGradient id="bg"><stop stop-color="#142b69"/><stop offset=".62" stop-color="#080d24"/><stop offset="1" stop-color="#02040d"/></radialGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9f7ff"/><stop offset=".28" stop-color="#5b8cff"/><stop offset=".65" stop-color="#9a55ff"/><stop offset="1" stop-color="#24e7ff"/></linearGradient>
+ <linearGradient id="trail"><stop stop-color="#27eaff"/><stop offset=".5" stop-color="#bd43ff"/><stop offset="1" stop-color="#ff4ecb"/></linearGradient>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="20"/></filter>
+ </defs>
+ <rect width="800" height="800" fill="url(#bg)"/>
+ <circle cx="400" cy="380" r="230" fill="#2547c7" opacity=".12" filter="url(#soft)"/>
+ <g fill="none" stroke="#2855b7" opacity=".45"><circle cx="400" cy="420" r="260"/><circle cx="400" cy="420" r="300"/><circle cx="400" cy="420" r="340"/></g>
+ <g fill="none" stroke="url(#trail)" stroke-width="5" stroke-linecap="round" filter="url(#glow)">
+  <path d="M75 360 C190 170 585 160 730 355"><animate attributeName="stroke-dasharray" values="0 1200;500 700;1200 0;0 1200" dur="5s" repeatCount="indefinite"/></path>
+  <path d="M80 500 C240 680 560 690 725 485"><animate attributeName="stroke-dasharray" values="1200 0;600 600;0 1200;1200 0" dur="5s" repeatCount="indefinite"/></path>
  </g>
- <!-- highlighted crawl paths -->
- <g fill="none" stroke="url(#trace)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
-  <path d="M190 520L390 440L540 540L720 440L890 480"/>
-  <path d="M470 210L540 540L760 700"/>
-  <path d="M300 330L470 210L650 290"/>
+ <g filter="url(#glow)" font-family="Arial,sans-serif" font-size="22" font-weight="600">
+  <g><rect x="70" y="150" width="190" height="58" rx="13" fill="#101b50" stroke="#43dfff" stroke-width="2"/><text x="92" y="187" fill="#dffaff">https://site.dev</text><animateTransform attributeName="transform" type="translate" values="0 0;24 -18;0 0" dur="4s" repeatCount="indefinite"/></g>
+  <g><rect x="535" y="190" width="190" height="58" rx="13" fill="#171044" stroke="#d45cff" stroke-width="2"/><text x="557" y="227" fill="#f5e8ff">https://page.io</text><animateTransform attributeName="transform" type="translate" values="0 0;-20 22;0 0" dur="4.6s" repeatCount="indefinite"/></g>
+  <g><rect x="48" y="555" width="190" height="58" rx="13" fill="#101b50" stroke="#39f0e1" stroke-width="2"/><text x="70" y="592" fill="#e0ffff">https://docs.app</text><animateTransform attributeName="transform" type="translate" values="0 0;18 -16;0 0" dur="3.8s" repeatCount="indefinite"/></g>
+  <g><rect x="565" y="555" width="190" height="58" rx="13" fill="#171044" stroke="#ff57c8" stroke-width="2"/><text x="587" y="592" fill="#fff0fc">https://web.net</text><animateTransform attributeName="transform" type="translate" values="0 0;-16 -18;0 0" dur="4.2s" repeatCount="indefinite"/></g>
  </g>
- <!-- indexed pages -->
- <g fill="#0d1834" stroke="#56d9ee" stroke-width="5">
-  <rect x="82" y="205" width="86" height="72" rx="14"/><rect x="260" y="285" width="86" height="72" rx="14"/>
-  <rect x="430" y="165" width="86" height="72" rx="14"/><rect x="610" y="250" width="86" height="72" rx="14"/>
-  <rect x="810" y="140" width="86" height="72" rx="14"/><rect x="148" y="485" width="86" height="72" rx="14"/>
-  <rect x="315" y="625" width="86" height="72" rx="14"/><rect x="500" y="505" width="86" height="72" rx="14"/>
-  <rect x="720" y="665" width="86" height="72" rx="14"/><rect x="850" y="445" width="86" height="72" rx="14"/>
+ <g transform="translate(400 390)" filter="url(#glow)">
+  <g><animateTransform attributeName="transform" type="translate" values="0 8;0 -18;0 8" dur="3.2s" repeatCount="indefinite"/>
+   <circle r="145" fill="#07112f" stroke="url(#glass)" stroke-width="17"/>
+   <circle r="119" fill="#14265c" stroke="#d6faff" stroke-opacity=".8" stroke-width="4"/>
+   <path d="M-82 -68 Q-10 -125 85 -67 Q25 -90 -40 25 Q-80 70 -82 -68" fill="#86caff" opacity=".16"/>
+   <path d="M103 102 L225 224" stroke="url(#glass)" stroke-width="38" stroke-linecap="round"/>
+   <path d="M103 102 L225 224" stroke="#d9faff" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
+  </g>
  </g>
- <g fill="#a3ff5f" filter="url(#glow)">
-  <circle cx="125" cy="241" r="9"/><circle cx="303" cy="321" r="9"/><circle cx="473" cy="201" r="10"/>
-  <circle cx="653" cy="281" r="9"/><circle cx="853" cy="171" r="9"/><circle cx="193" cy="521" r="9"/>
-  <circle cx="358" cy="661" r="9"/><circle cx="543" cy="541" r="10"/><circle cx="763" cy="701" r="9"/><circle cx="893" cy="481" r="9"/>
+ <g fill="none" stroke-width="5" stroke-linecap="round" filter="url(#glow)">
+  <path d="M250 275l-18 -18m18 18l20 -3m-20 3l-5 22" stroke="#33eaff"><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/></path>
+  <path d="M570 365l18 -20m-18 20l25 6m-25 -6l-7 25" stroke="#ff54d4"><animate attributeName="opacity" values="1;0;1" dur="1.4s" repeatCount="indefinite"/></path>
+  <path d="M315 640l-12 -18m12 18l22 0m-22 0l-6 22" stroke="#ffe45b"><animate attributeName="opacity" values="0;1;0" dur="1.1s" repeatCount="indefinite"/></path>
  </g>
- <!-- spiderbot: eight distinct legs and a compact body -->
- <g transform="translate(515 435)" stroke="#b9c8ff" stroke-width="19" stroke-linecap="round" stroke-linejoin="round" fill="none">
-  <path d="M-45 -42L-118 -112L-190 -112L-235 -165"/>
-  <path d="M-58 -15L-150 -42L-220 -10L-270 -45"/>
-  <path d="M-58 24L-150 72L-218 55L-265 100"/>
-  <path d="M-38 50L-100 145L-165 165L-205 215"/>
-  <path d="M45 -42L118 -112L190 -112L235 -165"/>
-  <path d="M58 -15L150 -42L220 -10L270 -45"/>
-  <path d="M58 24L150 72L218 55L265 100"/>
-  <path d="M38 50L100 145L165 165L205 215"/>
+ <g fill="#fff">
+  <circle cx="120" cy="300" r="4"><animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="680" cy="320" r="5"><animate attributeName="opacity" values="1;0;1" dur="1.7s" repeatCount="indefinite"/></circle>
+  <circle cx="480" cy="100" r="4"><animate attributeName="opacity" values="0;1;0" dur="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="350" cy="710" r="5"><animate attributeName="opacity" values="1;0;1" dur="1.6s" repeatCount="indefinite"/></circle>
  </g>
- <g transform="translate(515 435)" filter="url(#glow)">
-  <ellipse cy="0" rx="91" ry="105" fill="url(#body)" stroke="#d7e4ff" stroke-width="9"/>
-  <ellipse cx="-34" cy="-23" rx="24" ry="30" fill="#f8fbff"/>
-  <ellipse cx="34" cy="-23" rx="24" ry="30" fill="#f8fbff"/>
-  <circle cx="-29" cy="-18" r="11" fill="#101a3b"/><circle cx="39" cy="-18" r="11" fill="#101a3b"/>
-  <path d="M-31 39Q0 62 31 39" fill="none" stroke="#10224b" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="-65" cy="58" r="9" fill="#a3ff5f"/><circle cx="65" cy="58" r="9" fill="#a3ff5f"/>
- </g>
- <!-- active scan marker -->
- <g transform="translate(760 700)" filter="url(#glow)">
-  <circle r="31" fill="#a3ff5f" opacity=".2"/><circle r="13" fill="#c4ff83"/>
-  <path d="M-4 -49L-4 -20M-4 20L-4 49M-49 -4L-20 -4M20 -4L49 -4" stroke="#c4ff83" stroke-width="6" stroke-linecap="round"/>
- </g>
- <g fill="#e5f2ff" opacity=".8"><circle cx="205" cy="115" r="4"/><circle cx="780" cy="105" r="4"/><circle cx="910" cy="330" r="4"/><circle cx="105" cy="735" r="4"/><circle cx="880" cy="790" r="4"/></g>
- <text x="512" y="855" text-anchor="middle" font-family="Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="8" fill="#f8fafc">NEBULA</text>
- <text x="512" y="918" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="600" letter-spacing="15" fill="#67e8f9">SEARCH</text>
-</g></svg>
+</svg>
