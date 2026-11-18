@@ -1,74 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
-<title id="title">Nebula Search — aranha crawler neon magenta</title>
-<desc id="desc">Aranha robótica de oito pernas articuladas em azul-ciano, rastreando quatro URLs conectadas em uma interface futurista.</desc>
+<title id="title">Nebula Search — aranha pesquisando no Google</title>
+<desc id="desc">Aranha neon roxa percorre uma interface de pesquisas Google, realizando várias buscas sobre rastreamento e indexação de páginas.</desc>
 <defs>
-  <radialGradient id="background"><stop stop-color="#35102f"/><stop offset=".58" stop-color="#160817"/><stop offset="1" stop-color="#09040c"/></radialGradient>
-  <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2fa"/><stop offset=".28" stop-color="#e45bc4"/><stop offset=".7" stop-color="#7a1b60"/><stop offset="1" stop-color="#2c0b28"/></linearGradient>
-  <linearGradient id="cyan"><stop stop-color="#ff2bd6"/><stop offset=".55" stop-color="#ff65cf"/><stop offset="1" stop-color="#ffb1ed"/></linearGradient>
-  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#9c286f" stroke-opacity=".12" stroke-width="1"/></pattern>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#090611"/><stop offset="1" stop-color="#16091d"/></linearGradient>
+ <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#1b1424"/><stop offset="1" stop-color="#100d18"/></linearGradient>
+ <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+ <linearGradient id="spider" x2="1" y2="1"><stop stop-color="#ff9af1"/><stop offset=".48" stop-color="#e34bd4"/><stop offset="1" stop-color="#8f35c8"/></linearGradient>
 </defs>
-<rect width="800" height="800" fill="url(#background)"/>
-<rect width="800" height="800" fill="url(#grid)"/>
-<circle cx="400" cy="390" r="210" fill="#ff2bd6" opacity=".13" filter="url(#softGlow)"/>
-<g fill="none" stroke="#a72a7a" stroke-opacity=".3"><circle cx="400" cy="390" r="210"/><circle cx="400" cy="390" r="270" stroke-dasharray="5 13"/><circle cx="400" cy="390" r="330" stroke-dasharray="2 16"/></g>
-<!-- Ten simultaneous URL targets -->
-<g font-family="Arial,sans-serif" font-size="14" font-weight="700">
-  <g><rect x="22" y="68" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="38" y="96" fill="#ffe5fb">https://alpha.dev</text><circle cx="34" cy="79" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="576" y="68" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="592" y="96" fill="#ffe5fb">https://orbit.io</text><circle cx="588" cy="79" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="22" y="205" width="202" height="46" rx="11" fill="#210b28" stroke="#f04bc9" stroke-width="2"/><text x="38" y="233" fill="#ffe5fb">https://nova.app</text><circle cx="34" cy="216" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="576" y="205" width="202" height="46" rx="11" fill="#210b28" stroke="#f04bc9" stroke-width="2"/><text x="592" y="233" fill="#ffe5fb">https://pulse.net</text><circle cx="588" cy="216" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="22" y="342" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="38" y="370" fill="#ffe5fb">https://lumen.dev</text><circle cx="34" cy="353" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="576" y="342" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="592" y="370" fill="#ffe5fb">https://flux.org</text><circle cx="588" cy="353" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="22" y="479" width="202" height="46" rx="11" fill="#210b28" stroke="#f04bc9" stroke-width="2"/><text x="38" y="507" fill="#ffe5fb">https://vertex.io</text><circle cx="34" cy="490" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="576" y="479" width="202" height="46" rx="11" fill="#210b28" stroke="#f04bc9" stroke-width="2"/><text x="592" y="507" fill="#ffe5fb">https://nexus.app</text><circle cx="588" cy="490" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="22" y="616" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="38" y="644" fill="#ffe5fb">https://nova.dev</text><circle cx="34" cy="627" r="3.5" fill="#ff8be8"/></g>
-  <g><rect x="576" y="616" width="202" height="46" rx="11" fill="#210b28" stroke="#ff4bd8" stroke-width="2"/><text x="592" y="644" fill="#ffe5fb">https://echo.site</text><circle cx="588" cy="627" r="3.5" fill="#ff8be8"/></g>
+<rect width="800" height="800" fill="url(#bg)"/>
+<circle cx="400" cy="395" r="250" fill="#a52dba" opacity=".13" filter="url(#soft)"/>
+<g opacity=".13" stroke="#b85acb" fill="none"><path d="M0 160H800M0 320H800M0 480H800M0 640H800"/><path d="M160 0V800M320 0V800M480 0V800M640 0V800"/></g>
+<!-- Browser frame -->
+<rect x="38" y="35" width="724" height="730" rx="22" fill="#0c0a12" stroke="#4c3158" stroke-width="2"/>
+<path d="M60 35H740a22 22 0 0 1 22 22v36H38V57a22 22 0 0 1 22-22Z" fill="#21172a"/>
+<circle cx="65" cy="64" r="6" fill="#ff6b8a"/><circle cx="87" cy="64" r="6" fill="#ffd36b"/><circle cx="109" cy="64" r="6" fill="#8ee7a5"/>
+<rect x="160" y="49" width="480" height="30" rx="15" fill="#100d17" stroke="#4b3854"/>
+<text x="184" y="69" fill="#bcaec4" font-family="Arial,sans-serif" font-size="13">google.com/search</text>
+<!-- Google-like search header -->
+<g font-family="Arial,sans-serif"><text x="75" y="145" font-size="43" font-weight="600"><tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
+<rect x="260" y="112" width="460" height="48" rx="24" fill="#17131e" stroke="#62446d"/>
+<circle cx="286" cy="136" r="8" fill="none" stroke="#b8a7c1" stroke-width="2"/><path d="M292 142l7 7" stroke="#b8a7c1" stroke-width="2"/>
+<text x="312" y="141" fill="#f4eefa" font-size="15">pesquisa web crawler Java</text>
+<text x="76" y="190" fill="#9c8ca6" font-size="12">Todas as pesquisas</text><path d="M75 200H724" stroke="#392b42"/></g>
+<!-- Search results -->
+<g font-family="Arial,sans-serif">
+<g id="q1"><rect x="75" y="220" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="240" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 01</text><text x="94" y="258" fill="#fff" font-size="15">Java Spring Boot web crawler tutorial</text><circle cx="698" cy="244" r="5" fill="#b64be1"/></g>
+<g id="q2"><rect x="75" y="282" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="302" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 02</text><text x="94" y="320" fill="#fff" font-size="15">Como funciona o arquivo robots.txt?</text><circle cx="698" cy="306" r="5" fill="#b64be1"/></g>
+<g id="q3"><rect x="75" y="344" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="364" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 03</text><text x="94" y="382" fill="#fff" font-size="15">Extrair metadados HTML com Java</text><circle cx="698" cy="368" r="5" fill="#b64be1"/></g>
+<g id="q4"><rect x="75" y="406" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="426" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 04</text><text x="94" y="444" fill="#fff" font-size="15">Encontrar links internos e externos de páginas</text><circle cx="698" cy="430" r="5" fill="#b64be1"/></g>
+<g id="q5"><rect x="75" y="468" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="488" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 05</text><text x="94" y="506" fill="#fff" font-size="15">Indexação de páginas públicas na web</text><circle cx="698" cy="492" r="5" fill="#b64be1"/></g>
+<g id="q6"><rect x="75" y="530" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="550" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 06</text><text x="94" y="568" fill="#fff" font-size="15">Crawler com limite de requisições por domínio</text><circle cx="698" cy="554" r="5" fill="#b64be1"/></g>
+<g id="q7"><rect x="75" y="592" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="612" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 07</text><text x="94" y="630" fill="#fff" font-size="15">Como rastrear sitemap.xml automaticamente</text><circle cx="698" cy="616" r="5" fill="#b64be1"/></g>
+<g id="q8"><rect x="75" y="654" width="650" height="49" rx="10" fill="url(#panel)" stroke="#58355f"/><text x="94" y="674" fill="#d8b5ec" font-size="10">GOOGLE SEARCH · 08</text><text x="94" y="692" fill="#fff" font-size="15">Web scraping responsável e boas práticas</text><circle cx="698" cy="678" r="5" fill="#b64be1"/></g>
 </g>
-<!-- Ten live crawler connections -->
-<g fill="none" stroke-width="2.5" stroke-linecap="round" opacity=".9">
-  <path d="M224 91 Q300 110 365 335" stroke="#ff4bd8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;-68" dur="1.8s" repeatCount="indefinite"/></path>
-  <path d="M576 91 Q500 110 435 335" stroke="#ff8be8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;68" dur="2s" repeatCount="indefinite"/></path>
-  <path d="M224 228 Q292 230 350 365" stroke="#ff4bd8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;-68" dur="2.1s" repeatCount="indefinite"/></path>
-  <path d="M576 228 Q508 230 450 365" stroke="#ff8be8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;68" dur="2.2s" repeatCount="indefinite"/></path>
-  <path d="M224 365 Q290 365 333 390" stroke="#ff4bd8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;-68" dur="1.9s" repeatCount="indefinite"/></path>
-  <path d="M576 365 Q510 365 467 390" stroke="#ff8be8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;68" dur="2.3s" repeatCount="indefinite"/></path>
-  <path d="M224 502 Q292 490 350 430" stroke="#ff4bd8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;-68" dur="2s" repeatCount="indefinite"/></path>
-  <path d="M576 502 Q508 490 450 430" stroke="#ff8be8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;68" dur="2.4s" repeatCount="indefinite"/></path>
-  <path d="M224 639 Q300 590 365 465" stroke="#ff4bd8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;-68" dur="2.2s" repeatCount="indefinite"/></path>
-  <path d="M576 639 Q500 590 435 465" stroke="#ff8be8" stroke-dasharray="7 10"><animate attributeName="stroke-dashoffset" values="0;68" dur="2.5s" repeatCount="indefinite"/></path>
+<!-- Spider moves between searches; exact silhouette traced from supplied purple spider image -->
+<g id="crawler" filter="url(#glow)">
+ <animateMotion dur="18s" repeatCount="indefinite" rotate="0" path="M0 0 C-130 -35 -190 -20 -230 -125 S-90 -170 0 -65 S170 -120 225 -5 S120 90 0 70 S-160 150 -220 190 S-90 220 0 210 S150 120 220 85 S100 -20 0 -180"/>
+ <g transform="translate(-48 -65) scale(.30)">
+  <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="#f05bdc" stroke-width="5" stroke-linejoin="round" opacity=".95"/>
+  <path d="M253,5 251,8 274,72 282,138 279,140 216,123 228,121 252,126 266,114 265,99 249,47 230,2 225,0 225,13 235,42 243,83 244,103 239,108 197,105 190,107 181,118 167,111 166,120 152,121 152,112 142,112 137,118 126,105 77,107 74,104 76,78 92,2 84,12 67,54 53,112 67,127 81,121 102,122 44,140 37,138 48,58 64,19 67,3 57,13 49,31 44,33 44,41 36,53 27,79 15,147 32,162 39,162 62,149 85,143 114,141 123,145 91,149 72,170 21,211 1,215 4,275 12,310 33,366 47,384 26,306 22,235 92,172 105,164 114,164 115,168 97,183 89,183 87,215 90,271 98,339 107,380 119,410 134,434 139,431 127,405 116,360 111,295 114,213 111,198 126,180 129,182 129,203 146,268 156,283 164,283 174,266 190,199 188,181 192,179 208,197 204,205 208,293 203,356 183,432 195,419 213,371 228,283 229,185 200,165 201,162 214,164 239,184 238,187 242,185 245,191 249,191 296,236 293,298 288,327 272,374 271,389 285,367 307,309 317,261 318,215 299,211 281,198 227,149 196,146 201,141 223,141 249,147 287,163 304,146 296,98 284,60 262,13Z" fill="none" stroke="url(#spider)" stroke-width="2.1" stroke-linejoin="round"/>
+ </g>
 </g>
-<g fill="#ffd5f6" filter="url(#glow)">
-  <circle r="4.5"><animateMotion dur="2.2s" repeatCount="indefinite" path="M224 91 Q300 110 365 335"/></circle>
-  <circle r="4.5"><animateMotion dur="2.5s" repeatCount="indefinite" path="M576 639 Q500 590 435 465"/></circle>
-  <circle r="4"><animateMotion dur="2.1s" repeatCount="indefinite" path="M224 365 Q290 365 333 390"/></circle>
-  <circle r="4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M576 228 Q508 230 450 365"/></circle>
-</g>
-<g id="nebula-crawler" filter="url(#glow)">
-<animateMotion dur="16s" repeatCount="indefinite" rotate="auto" path="M0 0 C-24 -20 -34 -5 -20 16 C-4 30 20 18 26 -2 C32 -22 12 -32 0 0"/>
-<!-- Eight independently articulated mechanical legs -->
-<g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
-  <g transform="translate(365 365)"><animateTransform attributeName="transform" type="rotate" values="-5 0 0;5 0 0;-5 0 0" dur="1.25s" additive="sum" repeatCount="indefinite"/><path d="M0 0L-34 -28L-68 -23L-100 -58L-126 -65" stroke="#ff8be8" stroke-width="12"/><path d="M-68 -23L-100 -58" stroke="#ffe5fb" stroke-width="3"/><circle cx="-34" cy="-28" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-68" cy="-23" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-126" cy="-65" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(355 385)"><animateTransform attributeName="transform" type="rotate" values="4 0 0;-5 0 0;4 0 0" dur="1.4s" additive="sum" repeatCount="indefinite"/><path d="M0 0L-43 -10L-82 8L-116 -5L-143 4" stroke="#ff65cf" stroke-width="12"/><circle cx="-43" cy="-10" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-82" cy="8" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-143" cy="4" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(365 415)"><animateTransform attributeName="transform" type="rotate" values="-4 0 0;5 0 0;-4 0 0" dur="1.35s" additive="sum" repeatCount="indefinite"/><path d="M0 0L-38 24L-72 50L-105 48L-128 75" stroke="#ff8be8" stroke-width="12"/><circle cx="-38" cy="24" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-72" cy="50" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-128" cy="75" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(385 435)"><animateTransform attributeName="transform" type="rotate" values="5 0 0;-4 0 0;5 0 0" dur="1.5s" additive="sum" repeatCount="indefinite"/><path d="M0 0L-18 38L-36 75L-61 91L-72 121" stroke="#ff65cf" stroke-width="12"/><circle cx="-18" cy="38" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-36" cy="75" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="-72" cy="121" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(435 365)"><animateTransform attributeName="transform" type="rotate" values="5 0 0;-5 0 0;5 0 0" dur="1.3s" additive="sum" repeatCount="indefinite"/><path d="M0 0L34 -28L68 -23L100 -58L126 -65" stroke="#ff8be8" stroke-width="12"/><path d="M68 -23L100 -58" stroke="#ffe5fb" stroke-width="3"/><circle cx="34" cy="-28" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="68" cy="-23" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="126" cy="-65" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(445 385)"><animateTransform attributeName="transform" type="rotate" values="-4 0 0;5 0 0;-4 0 0" dur="1.45s" additive="sum" repeatCount="indefinite"/><path d="M0 0L43 -10L82 8L116 -5L143 4" stroke="#ff65cf" stroke-width="12"/><circle cx="43" cy="-10" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="82" cy="8" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="143" cy="4" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(435 415)"><animateTransform attributeName="transform" type="rotate" values="4 0 0;-5 0 0;4 0 0" dur="1.38s" additive="sum" repeatCount="indefinite"/><path d="M0 0L38 24L72 50L105 48L128 75" stroke="#ff8be8" stroke-width="12"/><circle cx="38" cy="24" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="72" cy="50" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="128" cy="75" r="5" fill="#ff4bd8"/></g>
-  <g transform="translate(415 435)"><animateTransform attributeName="transform" type="rotate" values="-5 0 0;4 0 0;-5 0 0" dur="1.52s" additive="sum" repeatCount="indefinite"/><path d="M0 0L18 38L36 75L61 91L72 121" stroke="#ff65cf" stroke-width="12"/><circle cx="18" cy="38" r="8" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="36" cy="75" r="7" fill="#571044" stroke="#ff8be8" stroke-width="4"/><circle cx="72" cy="121" r="5" fill="#ff4bd8"/></g>
-</g>
-<!-- Mechanical body -->
-<g filter="url(#glow)">
-  <ellipse cx="400" cy="400" rx="67" ry="82" fill="#06142e" stroke="#4deaff" stroke-width="4"/>
-  <path d="M400 316L458 350L470 410L438 470L362 470L330 410L342 350Z" fill="url(#shell)" stroke="#ffe2fa" stroke-width="4"/>
-  <path d="M400 330L444 356L450 408L425 452L375 452L350 408L356 356Z" fill="#10264d" stroke="url(#cyan)" stroke-width="5"/>
-  <rect x="370" y="369" width="60" height="55" rx="17" fill="#071a37" stroke="#9defff" stroke-width="3"/>
-  <circle cx="400" cy="396" r="19" fill="#ff2bd6" stroke="#fff0fc" stroke-width="5"><animate attributeName="r" values="16;21;16" dur="1.5s" repeatCount="indefinite"/></circle>
-  <circle cx="400" cy="396" r="7" fill="#2b0925"/>
-  <path d="M382 441H418M389 454H411" stroke="#d4fbff" stroke-width="5" stroke-linecap="round"/>
-  <path d="M400 316V286" stroke="#ff65cf" stroke-width="4"/><circle cx="400" cy="279" r="7" fill="#ff65cf"><animate attributeName="r" values="5;10;5" dur="1s" repeatCount="indefinite"/></circle>
-</g>
-</g>
-<g fill="#ffe5fb" opacity=".8"><circle cx="280" cy="280" r="3"><animate attributeName="opacity" values=".2;1;.2" dur="1.4s" repeatCount="indefinite"/></circle><circle cx="520" cy="285" r="4"><animate attributeName="opacity" values="1;.2;1" dur="1.7s" repeatCount="indefinite"/></circle><circle cx="300" cy="520" r="4"><animate attributeName="opacity" values=".2;1;.2" dur="1.6s" repeatCount="indefinite"/></circle><circle cx="500" cy="520" r="3"><animate attributeName="opacity" values="1;.2;1" dur="1.3s" repeatCount="indefinite"/></circle></g>
+<!-- Search activity indicator -->
+<rect x="290" y="716" width="220" height="22" rx="11" fill="#21162b" stroke="#633a70"/>
+<circle cx="306" cy="727" r="4" fill="#e45be1"><animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></circle>
+<text x="320" y="731" fill="#d9c3e4" font-family="Arial,sans-serif" font-size="10">PESQUISANDO NA WEB</text>
 </svg>
