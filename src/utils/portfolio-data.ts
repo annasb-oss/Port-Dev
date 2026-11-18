@@ -236,6 +236,16 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     repoLabel: 'Jogar PAC-MAN',
   },
   {
+    id: 'nebula-search',
+    title: 'Nebula Search',
+    description:
+      'Web Crawler desenvolvido em Java e Spring Boot para rastrear páginas públicas, extrair metadados e links, respeitando regras de segurança, robots.txt e limites por domínio.',
+    gifUrl: `${import.meta.env.BASE_URL}assets/nebula-search-card.svg?v=20261118`,
+    gifAlt: 'Identidade visual quadrada do Nebula Search, com uma lupa em uma rede digital azul e violeta',
+    repoUrl: 'https://annasb-oss.github.io/Nebula-search/',
+    repoLabel: 'Acessar apresentação do Nebula Search',
+  },
+  {
     id: 'adivinhe-o-numero',
     title: 'Adivinhe o Número',
     description:
