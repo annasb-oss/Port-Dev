@@ -19,32 +19,32 @@
  <rect x="37" y="103" width="49" height="657" fill="#100d17"/>
  <path d="M86 103V760" stroke="#2b2033"/>
  <g fill="#766481" font-family="monospace" font-size="15" text-anchor="end">
-  <text x="75" y="154">01</text><text x="75" y="181">02</text><text x="75" y="208">03</text><text x="75" y="235">04</text><text x="75" y="262">05</text><text x="75" y="289">06</text><text x="75" y="316">07</text><text x="75" y="343">08</text><text x="75" y="370">09</text><text x="75" y="397">10</text><text x="75" y="424">11</text><text x="75" y="451">12</text><text x="75" y="478">13</text><text x="75" y="505">14</text><text x="75" y="532">15</text><text x="75" y="559">16</text><text x="75" y="586">17</text><text x="75" y="613">18</text><text x="75" y="640">19</text><text x="75" y="667">20</text><text x="75" y="694">21</text><text x="75" y="721">22</text>
+  <text x="75" y="280">01</text><text x="75" y="299">02</text><text x="75" y="318">03</text><text x="75" y="337">04</text><text x="75" y="356">05</text><text x="75" y="375">06</text><text x="75" y="394">07</text><text x="75" y="413">08</text><text x="75" y="432">09</text><text x="75" y="489">10</text><text x="75" y="470">11</text><text x="75" y="451">12</text><text x="75" y="508">13</text><text x="75" y="527">14</text><text x="75" y="546">15</text><text x="75" y="565">16</text><text x="75" y="584">17</text><text x="75" y="603">18</text><text x="75" y="622">19</text><text x="75" y="641">20</text><text x="75" y="660">21</text><text x="75" y="679">22</text>
  </g>
  <g font-family="monospace">
   <g opacity=".20"><path d="M110 150H725M110 690H725" stroke="#9d55b7" stroke-dasharray="3 9"/></g>
-  <g><text x="72" y="175" fill="#d89cff" font-size="17">public class NebulaCrawler {</text>
-<text x="72" y="202" fill="#b8a9c9" font-size="17">  private final WebClient client;</text>
-<text x="72" y="229" fill="#d89cff" font-size="17">  public CrawlResult scan(String url) {</text>
-<text x="72" y="256" fill="#b8a9c9" font-size="17">    URI target = URI.create(url);</text>
-<text x="72" y="283" fill="#b8a9c9" font-size="17">    RobotsPolicy policy = robots.load(target);</text>
-<text x="72" y="310" fill="#e9a7f4" font-size="17">    if (!policy.isAllowed(target)) return SKIPPED;</text>
-<text x="72" y="337" fill="#b8a9c9" font-size="17">    Document page = client.get(target);</text>
-<text x="72" y="364" fill="#b8a9c9" font-size="17">    Set&lt;URI&gt; links = extractLinks(page);</text>
-<text x="72" y="391" fill="#b8a9c9" font-size="17">    links.forEach(queue::offer);</text>
-<text x="72" y="418" fill="#e9a7f4" font-size="17">    return indexer.store(page);</text>
-<text x="72" y="445" fill="#b8a9c9" font-size="17">  }</text>
-<text x="72" y="472" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="499" fill="#d89cff" font-size="17">@Service</text>
-<text x="72" y="526" fill="#d89cff" font-size="17">public class MetadataExtractor {</text>
-<text x="72" y="553" fill="#d89cff" font-size="17">  public Metadata parse(Document html) {</text>
-<text x="72" y="580" fill="#b8a9c9" font-size="17">    String title = html.title();</text>
-<text x="72" y="607" fill="#b8a9c9" font-size="17">    String description = html.select("meta");</text>
-<text x="72" y="634" fill="#e9a7f4" font-size="17">    return new Metadata(title, description);</text>
-<text x="72" y="661" fill="#b8a9c9" font-size="17">}</text>
-<text x="72" y="688" fill="#d89cff" font-size="17">@Transactional</text>
-<text x="72" y="715" fill="#d89cff" font-size="17">public void savePage(CrawlPage page) {</text>
-<text x="72" y="742" fill="#b8a9c9" font-size="17">  repository.save(page);</text>
+  <g><text x="72" y="300" fill="#d89cff" font-size="17">public class NebulaCrawler {</text>
+<text x="72" y="319" fill="#b8a9c9" font-size="17">  private final WebClient client;</text>
+<text x="72" y="338" fill="#d89cff" font-size="17">  public CrawlResult scan(String url) {</text>
+<text x="72" y="357" fill="#b8a9c9" font-size="17">    URI target = URI.create(url);</text>
+<text x="72" y="376" fill="#b8a9c9" font-size="17">    RobotsPolicy policy = robots.load(target);</text>
+<text x="72" y="395" fill="#e9a7f4" font-size="17">    if (!policy.isAllowed(target)) return SKIPPED;</text>
+<text x="72" y="414" fill="#b8a9c9" font-size="17">    Document page = client.get(target);</text>
+<text x="72" y="433" fill="#b8a9c9" font-size="17">    Set&lt;URI&gt; links = extractLinks(page);</text>
+<text x="72" y="452" fill="#b8a9c9" font-size="17">    links.forEach(queue::offer);</text>
+<text x="72" y="471" fill="#e9a7f4" font-size="17">    return indexer.store(page);</text>
+<text x="72" y="490" fill="#b8a9c9" font-size="17">  }</text>
+<text x="72" y="509" fill="#b8a9c9" font-size="17">}</text>
+<text x="72" y="528" fill="#d89cff" font-size="17">@Service</text>
+<text x="72" y="547" fill="#d89cff" font-size="17">public class MetadataExtractor {</text>
+<text x="72" y="566" fill="#d89cff" font-size="17">  public Metadata parse(Document html) {</text>
+<text x="72" y="585" fill="#b8a9c9" font-size="17">    String title = html.title();</text>
+<text x="72" y="604" fill="#b8a9c9" font-size="17">    String description = html.select("meta");</text>
+<text x="72" y="623" fill="#e9a7f4" font-size="17">    return new Metadata(title, description);</text>
+<text x="72" y="642" fill="#b8a9c9" font-size="17">}</text>
+<text x="72" y="661" fill="#d89cff" font-size="17">@Transactional</text>
+<text x="72" y="680" fill="#d89cff" font-size="17">public void savePage(CrawlPage page) {</text>
+<text x="72" y="699" fill="#b8a9c9" font-size="17">  repository.save(page);</text>
 <text x="72" y="769" fill="#b8a9c9" font-size="17">  log.info("Indexed: {}", page.url());</text>
 <text x="72" y="796" fill="#b8a9c9" font-size="17">}</text>
 <text x="72" y="823" fill="#d89cff" font-size="17">public boolean isAllowed(URI uri) {</text>
