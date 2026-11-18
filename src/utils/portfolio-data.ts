@@ -240,8 +240,8 @@ export const VIDEO_PROJECTS: VideoProjectItem[] = [
     title: 'Nebula Search',
     description:
       'Web Crawler desenvolvido em Java e Spring Boot para rastrear páginas públicas, extrair metadados e links, respeitando regras de segurança, robots.txt e limites por domínio.',
-    gifUrl: `${import.meta.env.BASE_URL}assets/nebula-robot-spider.svg?v=20261118-google-search-v4`,
-    gifAlt: 'Aranha neon roxa realizando várias pesquisas no Google para rastrear páginas públicas',
+    gifUrl: `${import.meta.env.BASE_URL}assets/nebula-robot-spider.svg?v=20261118-java-walk-v5`,
+    gifAlt: 'Aranha neon roxa caminhando sobre várias linhas de código Java do Nebula Search',
     repoUrl: 'https://annasb-oss.github.io/Nebula-search/',
     repoLabel: 'Acessar apresentação do Nebula Search',
   },
