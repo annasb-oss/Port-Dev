@@ -36,7 +36,7 @@ export default function AboutSection() {
               className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors duration-200 whitespace-nowrap"
             >
               <Download className="w-4 h-4" aria-hidden="true" />
-              <span>Abaixar curriculo</span>
+              <span>Baixar currículo</span>
             </a>
           </div>
 
