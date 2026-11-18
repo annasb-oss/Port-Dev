@@ -54,12 +54,11 @@ export default function TechStackSection() {
                           preserveAspectRatio="xMidYMid slice"
                         >
                           <defs>
-                            <clipPath id="pacman-art-clip"><circle cx="200" cy="200" r="200" /></clipPath>
                             <pattern id="pacman-dots" width="28" height="28" patternUnits="userSpaceOnUse">
                               <circle cx="14" cy="14" r="4.2" fill="#ffb52e" />
                             </pattern>
                           </defs>
-                          <g clipPath="url(#pacman-art-clip)">
+                          <g>
                             <rect width="400" height="400" fill="#030303" />
                             <rect width="400" height="400" fill="url(#pacman-dots)" />
                             <g fill="#030303" stroke="#073bff" strokeWidth="5" strokeLinejoin="round">
@@ -94,7 +93,6 @@ export default function TechStackSection() {
                               <circle cx="329" cy="230" r="9"/><circle cx="347" cy="230" r="9"/>
                               <circle cx="195" cy="351" r="9"/><circle cx="213" cy="351" r="9"/>
                             </g>
-                            <circle cx="200" cy="200" r="196" fill="none" stroke="#073bff" strokeWidth="3" opacity=".75"/>
                           </g>
                         </svg>
                       ) : project.gifUrl ? <img src={project.gifUrl} alt={project.gifAlt ?? project.title} loading="lazy" className="w-full h-full object-cover" /> : <><Film className="w-8 h-8 text-zinc-700 mb-2" aria-hidden="true" /><span className="text-xs font-semibold text-zinc-500">Em breve · GIF sem som</span></>}
