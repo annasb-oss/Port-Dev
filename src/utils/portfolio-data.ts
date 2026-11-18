@@ -228,14 +228,12 @@ export interface VideoProjectItem {
 
 export const VIDEO_PROJECTS: VideoProjectItem[] = [
   {
-    id: 'nebula-search',
-    title: 'Nebula Search',
+    id: 'pacman',
+    title: 'PAC-MAN · Arcade',
     description:
-      'Recriação animada da busca visual sobre código Java e operações bitwise com destaques e grifos em âmbar guiados pela aranha.',
-    gifUrl: `${import.meta.env.BASE_URL}assets/nebula-search.gif`,
-    gifAlt: 'Demonstração animada em GIF do projeto Nebula Search exibindo código Java e aranha preta peluda olhando para cima enquanto percorre os dois lados grifando trechos importantes',
-    repoUrl: 'https://github.com/annasb-oss/Nebula-search',
-    repoLabel: 'github.com/annasb-oss/Nebula-search',
+      'Jogo arcade independente desenvolvido como projeto de estudo em programação, com labirinto, fantasmas, frutas coletáveis, pontuação e fases. Não é um produto oficial da franquia PAC-MAN.',
+    repoUrl: 'https://annasb-oss.github.io/pacman/',
+    repoLabel: 'Jogar PAC-MAN',
   },
   {
     id: 'adivinhe-o-numero',
