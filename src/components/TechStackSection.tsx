@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code2, ExternalLink, Film, FolderKanban, Trophy } from 'lucide-react';
+import { Code2, ExternalLink, Film, FolderKanban, Gamepad2, Trophy } from 'lucide-react';
 import { EXPERIENCE_TIMELINE, TECH_STACK, VIDEO_PROJECTS } from '../utils/portfolio-data';
 
 type PortfolioTab = 'projects' | 'tech' | 'achievements';
@@ -45,7 +45,24 @@ export default function TechStackSection() {
                 <article key={project.id} data-testid={`project-card-${project.id}`} className={`glow-border-card group relative isolate p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between ${project.isPlaceholder ? 'bg-[#0f0f12]/90 border border-white/20' : 'bg-[#141414]/90 border border-white/35 shadow-[0_0_10px_rgba(255,255,255,0.10),inset_0_0_12px_rgba(255,255,255,0.025)]'} hover:-translate-y-1 hover:border-white/85 hover:shadow-[0_0_12px_rgba(255,255,255,0.58),0_0_28px_rgba(255,255,255,0.20),inset_0_0_16px_rgba(255,255,255,0.06)] focus-within:border-white/85`}>
                   <div className="relative z-[2]">
                     <div className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 ${project.isPlaceholder ? 'bg-zinc-950/90 border border-zinc-800/70 flex flex-col items-center justify-center text-center px-4' : 'bg-[#080c14] border border-white/25 shadow-[0_0_12px_rgba(255,255,255,0.08)] group-hover:border-white/55 group-hover:shadow-[0_0_18px_rgba(255,255,255,0.20)]'}`}>
-                      {project.gifUrl ? <img src={project.id === 'nebula-search' && !project.gifUrl.includes('?') ? `${project.gifUrl}?v=3` : project.gifUrl} alt={project.gifAlt ?? project.title} loading="lazy" className="w-full h-full object-cover" /> : <><Film className="w-8 h-8 text-zinc-700 mb-2" aria-hidden="true" /><span className="text-xs font-semibold text-zinc-500">Em breve · GIF sem som</span></>}
+                      {project.id === 'pacman' ? (
+                        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-black" aria-label="Prévia do jogo PAC-MAN">
+                          <div aria-hidden="true" className="absolute inset-3 rounded-xl border border-blue-700/80 shadow-[0_0_18px_rgba(37,99,235,0.25)]" />
+                          <div aria-hidden="true" className="absolute inset-x-7 top-1/4 h-px bg-blue-500/70 shadow-[0_0_8px_#2563eb]" />
+                          <div aria-hidden="true" className="absolute inset-x-7 bottom-1/4 h-px bg-blue-500/70 shadow-[0_0_8px_#2563eb]" />
+                          <div aria-hidden="true" className="absolute left-[18%] top-[20%] h-2 w-2 bg-white shadow-[24px_0_#fff,48px_0_#fff,72px_0_#fff,96px_0_#fff]" />
+                          <div aria-hidden="true" className="absolute right-[18%] bottom-[20%] h-2 w-2 bg-white shadow-[-24px_0_#fff,-48px_0_#fff,-72px_0_#fff,-96px_0_#fff]" />
+                          <div className="relative z-[1] flex items-center gap-3 sm:gap-4">
+                            <span className="relative block h-11 w-11 rounded-full border-[3px] border-yellow-300 border-r-transparent bg-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.35)]" />
+                            <span className="h-5 w-5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.25)]" />
+                            <span className="h-5 w-5 rounded-full bg-pink-300" />
+                            <span className="h-5 w-5 rounded-full bg-cyan-300" />
+                          </div>
+                          <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2 text-[10px] font-black tracking-[0.25em] text-yellow-300">
+                            <Gamepad2 className="h-3.5 w-3.5" aria-hidden="true" /> ARCADE
+                          </div>
+                        </div>
+                      ) : project.gifUrl ? <img src={project.gifUrl} alt={project.gifAlt ?? project.title} loading="lazy" className="w-full h-full object-cover" /> : <><Film className="w-8 h-8 text-zinc-700 mb-2" aria-hidden="true" /><span className="text-xs font-semibold text-zinc-500">Em breve · GIF sem som</span></>}
                     </div>
                     <h3 className={`text-xl font-bold mb-1.5 ${project.isPlaceholder ? 'text-zinc-400' : 'text-white group-hover:text-zinc-200 transition-colors'}`}>{project.title}</h3>
                     <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{project.description}</p>
