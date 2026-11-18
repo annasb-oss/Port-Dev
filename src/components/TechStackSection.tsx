@@ -54,28 +54,54 @@ export default function TechStackSection() {
                           preserveAspectRatio="xMidYMid slice"
                         >
                           <defs>
+                            <linearGradient id="ghost-red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ff777f"/><stop offset=".42" stopColor="#f32942"/><stop offset="1" stopColor="#a90928"/></linearGradient>
+                            <linearGradient id="ghost-orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffe08a"/><stop offset=".45" stopColor="#ffad27"/><stop offset="1" stopColor="#d85a08"/></linearGradient>
+                            <linearGradient id="ghost-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b5f27a"/><stop offset=".45" stopColor="#68c947"/><stop offset="1" stopColor="#24813d"/></linearGradient>
+                            <linearGradient id="ghost-eye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ffffff"/><stop offset="1" stopColor="#c9e5ff"/></linearGradient>
                             <pattern id="pacman-dots" width="28" height="28" patternUnits="userSpaceOnUse">
                               <circle cx="14" cy="14" r="4.2" fill="#ffb52e" />
                             </pattern>
                           </defs>
                           <g>
-                            <rect width="400" height="400" fill="#030303" />
-                            <rect width="400" height="400" fill="url(#pacman-dots)" />
-                            <g fill="#030303" stroke="#073bff" strokeWidth="5" strokeLinejoin="round">
-                              <path d="M22 34h112v28H52v42H18V58h4zM266 34h112v28H296v42h-30zM18 148h82v28H48v50H18zM300 148h82v28h-52v50h-30zM20 270h100v26H48v42H20zM280 270h100v26h-70v42h-30zM145 18h28v90h-28zM228 18h28v90h-28zM145 292h28v90h-28zM228 292h28v90h-28z" />
-                              <path d="M90 128h220v16H90zM90 256h220v16H90z" />
+                            <rect width="400" height="400" fill="#03<g strokeLinejoin="round">
+                              <g transform="translate(70 63)">
+                                <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="#650d20" opacity=".75" transform="translate(0 3)"/>
+                                <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="url(#ghost-red)" stroke="#ff9aa3" strokeWidth="1.4"/>
+                                <path d="M10 14Q16 3 27 4" fill="none" stroke="#ffd0d2" strokeWidth="3" opacity=".55" strokeLinecap="round"/>
+                                <ellipse cx="19" cy="25" rx="8" ry="10" fill="url(#ghost-eye)" stroke="#fff" strokeWidth="1"/>
+                                <ellipse cx="36" cy="25" rx="8" ry="10" fill="url(#ghost-eye)" stroke="#fff" strokeWidth="1"/>
+                                <circle cx="21" cy="27" r="4.1" fill="#16418d"/><circle cx="38" cy="27" r="4.1" fill="#16418d"/>
+                                <circle cx="22.4" cy="25.4" r="1.5" fill="#fff"/><circle cx="39.4" cy="25.4" r="1.5" fill="#fff"/>
+                                <path d="M8 39q4-4 8 0" fill="none" stroke="#ffb2b8" strokeWidth="2" opacity=".65"/>
+                              </g>
+                              <g transform="translate(275 260)">
+                                <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="#650d20" opacity=".75" transform="translate(0 3)"/>
+                                <path d="M3 49V25C3 10 13 1 27 1s24 9 24 24v24l-7-5-7 6-7-6-7 6-7-6z" fill="url(#ghost-red)" stroke="#ff9aa3" strokeWidth="1.4"/>
+                                <path d="M10 14Q16 3 27 4" fill="none" stroke="#ffd0d2" strokeWidth="3" opacity=".55" strokeLinecap="round"/>
+                                <ellipse cx="19" cy="25" rx="8" ry="10" fill="url(#ghost-eye)" stroke="#fff" strokeWidth="1"/>
+                                <ellipse cx="36" cy="25" rx="8" ry="10" fill="url(#ghost-eye)" stroke="#fff" strokeWidth="1"/>
+                                <circle cx="21" cy="27" r="4.1" fill="#16418d"/><circle cx="38" cy="27" r="4.1" fill="#16418d"/>
+                                <circle cx="22.4" cy="25.4" r="1.5" fill="#fff"/><circle cx="39.4" cy="25.4" r="1.5" fill="#fff"/>
+                                <path d="M8 39q4-4 8 0" fill="none" stroke="#ffb2b8" strokeWidth="2" opacity=".65"/>
+                              </g>
+                              <g transform="translate(285 82)">
+                                <path d="M3 39V20C3 8 12 1 25 1s22 7 22 19v19l-6-4-7 5-7-5-7 5-7-5z" fill="#79400b" opacity=".75" transform="translate(0 3)"/>
+                                <path d="M3 39V20C3 8 12 1 25 1s22 7 22 19v19l-6-4-7 5-7-5-7 5-7-5z" fill="url(#ghost-orange)" stroke="#ffe2a0" strokeWidth="1.4"/>
+                                <path d="M9 12Q15 3 25 4" fill="none" stroke="#fff0c5" strokeWidth="2.8" opacity=".65" strokeLinecap="round"/>
+                                <ellipse cx="18" cy="20" rx="7" ry="8.5" fill="url(#ghost-eye)"/><ellipse cx="33" cy="20" rx="7" ry="8.5" fill="url(#ghost-eye)"/>
+                                <circle cx="20" cy="22" r="3.7" fill="#16418d"/><circle cx="35" cy="22" r="3.7" fill="#16418d"/>
+                                <circle cx="21.2" cy="20.5" r="1.4" fill="#fff"/><circle cx="36.2" cy="20.5" r="1.4" fill="#fff"/>
+                              </g>
+                              <g transform="translate(87 276)">
+                                <path d="M3 39V20C3 8 12 1 25 1s22 7 22 19v19l-6-4-7 5-7-5-7 5-7-5z" fill="#245c25" opacity=".75" transform="translate(0 3)"/>
+                                <path d="M3 39V20C3 8 12 1 25 1s22 7 22 19v19l-6-4-7 5-7-5-7 5-7-5z" fill="url(#ghost-green)" stroke="#c7f6a2" strokeWidth="1.4"/>
+                                <path d="M9 12Q15 3 25 4" fill="none" stroke="#e4ffc8" strokeWidth="2.8" opacity=".65" strokeLinecap="round"/>
+                                <ellipse cx="18" cy="20" rx="7" ry="8.5" fill="url(#ghost-eye)"/><ellipse cx="33" cy="20" rx="7" ry="8.5" fill="url(#ghost-eye)"/>
+                                <circle cx="20" cy="22" r="3.7" fill="#16418d"/><circle cx="35" cy="22" r="3.7" fill="#16418d"/>
+                                <circle cx="21.2" cy="20.5" r="1.4" fill="#fff"/><circle cx="36.2" cy="20.5" r="1.4" fill="#fff"/>
+                              </g>
                             </g>
-                            <g fill="#ffdc24">
-                              <path d="M194 168a38 38 0 1 0 0 64l-31-32z" />
-                              <circle cx="190" cy="185" r="5" fill="#080808" />
-                            </g>
-                            <g>
-                              <path d="M70 106v-17c0-15 11-26 25-26s25 11 25 26v17l-8-6-9 6-8-6-9 6-8-6z" fill="#ed2535" />
-                              <circle cx="88" cy="86" r="7" fill="white"/><circle cx="103" cy="86" r="7" fill="white"/>
-                              <circle cx="90" cy="87" r="3.2" fill="#123b92"/><circle cx="105" cy="87" r="3.2" fill="#123b92"/>
-                              <path d="M275 304v-17c0-15 11-26 25-26s25 11 25 26v17l-8-6-9 6-8-6-9 6-8-6z" fill="#ed2535" />
-                              <circle cx="293" cy="284" r="7" fill="white"/><circle cx="308" cy="284" r="7" fill="white"/>
-                              <circle cx="295" cy="285" r="3.2" fill="#123b92"/><circle cx="310" cy="285" r="3.2" fill="#123b92"/>
+                            y="285" r="3.2" fill="#123b92"/>
                               <path d="M285 120v-14c0-14 10-24 23-24s23 10 23 24v14l-8-5-8 5-8-5-8 5-8-5z" fill="#ffae24"/>
                               <circle cx="302" cy="103" r="6" fill="white"/><circle cx="316" cy="103" r="6" fill="white"/>
                               <circle cx="304" cy="104" r="2.8" fill="#123b92"/><circle cx="318" cy="104" r="2.8" fill="#123b92"/>
