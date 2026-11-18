@@ -68,13 +68,14 @@ test('PROJECTS includes GitHub repository adivinhe-o-numero with Harvard study i
   assert.match(repo?.studyLabel ?? '', /estudo/i);
 });
 
-test('VIDEO_PROJECTS includes Nebula Search recreated GIF and Adivinhe o Número project', () => {
+test('VIDEO_PROJECTS includes the PAC-MAN study game and Adivinhe o Número project', () => {
   assert.ok(VIDEO_PROJECTS.length >= 2);
-  const nebula = VIDEO_PROJECTS.find((p) => p.id === 'nebula-search');
-  assert.ok(nebula);
-  assert.equal(nebula?.title, 'Nebula Search');
-  assert.equal(nebula?.gifUrl, '/assets/nebula-search.gif');
-  assert.equal(nebula?.repoUrl, 'https://github.com/annasb-oss/Nebula-search');
+  const pacman = VIDEO_PROJECTS.find((p) => p.id === 'pacman');
+  assert.ok(pacman);
+  assert.equal(pacman?.title, 'PAC-MAN · Arcade');
+  assert.equal(pacman?.repoUrl, 'https://annasb-oss.github.io/pacman/');
+  assert.match(pacman?.description ?? '', /projeto de estudo/i);
+  assert.match(pacman?.description ?? '', /não é um produto oficial/i);
 
   const guess = VIDEO_PROJECTS.find((p) => p.id === 'adivinhe-o-numero');
   assert.ok(guess);
