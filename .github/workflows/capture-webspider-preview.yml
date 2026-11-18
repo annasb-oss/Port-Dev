@@ -1,0 +1,72 @@
+name: Capture WEBSPIDER portfolio preview
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/components/TechStackSection.tsx"
+      - "src/utils/portfolio-data.ts"
+      - ".github/workflows/capture-webspider-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: webspider-preview
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install Playwright browser
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Capture the real WEBSPIDER home screen
+        run: |
+          mkdir -p public/assets
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          url = "https://annasb-oss.github.io/WEBSPIDER---THE-INTERNET-EXPLORER-ENGINE-/"
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page(
+                  viewport={"width": 1440, "height": 1000},
+                  device_scale_factor=1,
+              )
+              response = page.goto(url, wait_until="domcontentloaded", timeout=120000)
+              if response is None or not response.ok:
+                  raise RuntimeError(f"WEBSPIDER did not load successfully: {response.status if response else 'no response'}")
+              page.evaluate("document.fonts.ready")
+              page.wait_for_timeout(5000)
+              page.screenshot(path="public/assets/webspider-preview.png", full_page=False)
+              print(f"Captured {page.url} — {page.title()} — HTTP {response.status}")
+              browser.close()
+          PY
+
+      - name: Commit screenshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/webspider-preview.png
+          if git diff --cached --quiet; then
+            echo "Screenshot is already current."
+          else
+            git commit -m "chore: update WEBSPIDER portfolio preview"
+            git push origin main
+          fi
+
+      - name: Deploy portfolio with the captured screenshot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
